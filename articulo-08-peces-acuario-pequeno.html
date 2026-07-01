@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los 10 mejores peces para acuarios pequeños (menos de 60L)</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #1a2a1a; background: #f7f9f4; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a2a4a 0%, #1a5a8a 50%, #0a3a6a 100%);
+    color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #a8d8f8; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(26px, 5vw, 46px); font-weight: 600; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+  .intro { font-family: 'Lora', serif; font-size: 19px; line-height: 1.75; color: #2a3a2a; border-left: 4px solid #1a5a8a; padding-left: 24px; margin-bottom: 40px; }
+  p { margin-bottom: 18px; color: #2a3a2a; }
+  h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #0a2a4a; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #c8d8ea; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 24px 0 36px; }
+  .rule-card { background: white; border: 1px solid #c8d8ea; border-radius: 12px; padding: 16px; text-align: center; }
+  .rule-icon { font-size: 24px; margin-bottom: 6px; }
+  .rule-title { font-weight: 600; font-size: 13px; color: #0a2a4a; margin-bottom: 4px; }
+  .rule-desc { font-size: 12px; color: #4a6a8a; line-height: 1.5; }
+
+  .fish-card { background: white; border: 1px solid #c8d8ea; border-radius: 14px; padding: 24px; margin: 20px 0; position: relative; }
+  .fish-number { position: absolute; top: -14px; left: 20px; background: #1a5a8a; color: white; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+  .fish-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 12px; margin-top: 8px; }
+  .fish-emoji { font-size: 34px; flex-shrink: 0; }
+  .fish-titles { flex: 1; }
+  .fish-name { font-family: 'Lora', serif; font-size: 19px; font-weight: 600; color: #0a2a4a; margin-bottom: 2px; }
+  .fish-sci { font-size: 12px; color: #5a8aaa; font-style: italic; }
+  .fish-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .ftag { font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 20px; }
+  .ftag-size { background: #e8f0fb; color: #0a2a5a; }
+  .ftag-temp { background: #fff8e0; color: #5a3a00; }
+  .ftag-group { background: #f5eef8; color: #3a0a5a; }
+  .ftag-easy { background: #e8f5ee; color: #0a4a2a; }
+  .ftag-star { background: #fff3e0; color: #8a4a00; }
+  .fish-card p { font-size: 15px; margin-bottom: 8px; }
+
+  .experience-box { background: #f0f7ff; border: 1px solid #b8d8f8; border-radius: 12px; padding: 18px 22px; margin: 12px 0 4px; }
+  .experience-box::before { content: '✋ Experiencia propia'; display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #1a5a9a; margin-bottom: 6px; }
+  .experience-box p { margin: 0; font-style: italic; font-size: 14px; color: #1a3a5a; }
+
+  .tip-box { background: #fff8e6; border: 1px solid #f0d080; border-radius: 12px; padding: 14px 18px; margin: 14px 0; display: flex; gap: 10px; }
+  .tip-box p { margin: 0; font-size: 14px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box { background: #fff5f5; border: 1px solid #f0a8a8; border-radius: 12px; padding: 14px 18px; margin: 14px 0; display: flex; gap: 10px; }
+  .warning-box p { margin: 0; font-size: 14px; color: #6b1a1a; }
+
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14px; }
+  .comparison-table th { background: #0a2a4a; color: white; padding: 10px 14px; text-align: left; font-weight: 500; font-size: 12px; letter-spacing: 0.5px; }
+  .comparison-table th:first-child { border-radius: 8px 0 0 0; }
+  .comparison-table th:last-child { border-radius: 0 8px 0 0; }
+  .comparison-table td { padding: 9px 14px; border-bottom: 1px solid #e0eaf2; color: #2a3a2a; }
+  .comparison-table tr:nth-child(even) td { background: #f5f9fc; }
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  .summary-box { background: #0a2a4a; color: white; border-radius: 16px; padding: 36px; margin: 48px 0 32px; }
+  .summary-box h3 { font-family: 'Lora', serif; font-size: 22px; color: #a8d8f8; margin-bottom: 20px; }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-list li { display: flex; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); align-items: flex-start; }
+  .summary-list li::before { content: '✓'; background: #1a5a8a; color: #a8d8f8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .cta-link { display: block; text-align: center; background: #1a5a8a; color: white; text-decoration: none; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; margin-top: 32px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .fish-header { flex-direction: column; gap: 8px; }
+    .summary-box { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Ranking</div>
+  <h1>Los 10 mejores peces para acuarios pequeños (menos de 60L)</h1>
+  <p class="hero-sub">Peces bonitos, fáciles de cuidar y que no se quedan sin espacio — la selección perfecta para empezar.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Un acuario pequeño no significa un acuario aburrido. Hay especies que se adaptan perfectamente a espacios reducidos, son activas, coloridas y fáciles de mantener. La clave está en elegir bien desde el principio — porque meter peces que crecen demasiado o necesitan más espacio es uno de los errores más comunes.</p>
+
+  <h2>Qué buscar en un pez para acuario pequeño</h2>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-icon">📏</div>
+      <div class="rule-title">Tamaño adulto pequeño</div>
+      <div class="rule-desc">Máximo 4-5 cm de adulto. Cuanto más pequeño, más espacio efectivo tiene.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">😌</div>
+      <div class="rule-title">Carácter pacífico</div>
+      <div class="rule-desc">En espacios reducidos los peces agresivos o territoriales generan mucho estrés.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">💪</div>
+      <div class="rule-title">Resistente</div>
+      <div class="rule-desc">Los acuarios pequeños son más inestables. Necesitas peces que toleren pequeñas variaciones.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🌡️</div>
+      <div class="rule-title">Parámetros compatibles</div>
+      <div class="rule-desc">Todos los peces del acuario deben necesitar condiciones de agua similares.</div>
+    </div>
+  </div>
+
+  <h2>Los 10 mejores peces para menos de 60 litros</h2>
+
+  <div class="fish-card">
+    <span class="fish-number">01</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🔵</div>
+      <div class="fish-titles">
+        <div class="fish-name">Danio margaritatus (Pez galaxia)</div>
+        <div class="fish-sci">Celestichthys margaritatus</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">2-3 cm</span>
+      <span class="ftag ftag-temp">22-26°C</span>
+      <span class="ftag ftag-group">Grupo de 8-10</span>
+      <span class="ftag ftag-star">⭐ Joya oculta</span>
+    </div>
+    <p>El pez galaxia es uno de los más espectaculares que puedes tener en un acuario pequeño. Su cuerpo oscuro lleno de puntitos azules plateados y las aletas naranja con negro crean un efecto visual increíble, especialmente en grupos grandes. Son muy activos y están en constante movimiento.</p>
+    <p>Son algo más delicados que otras especies de esta lista — necesitan agua limpia y parámetros estables — pero el resultado merece la pena.</p>
+    <div class="experience-box">
+      <p>He tenido danio margaritatus y son realmente especiales. En grupo de 8-10 en un acuario bien plantado son un espectáculo: los puntitos azules brillan bajo la luz y no paran de moverse. No son el pez más común de ver en tiendas, pero si los encuentras no lo dudes.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">02</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🔴</div>
+      <div class="fish-titles">
+        <div class="fish-name">Tetra neón</div>
+        <div class="fish-sci">Paracheirodon innesi</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">3-4 cm</span>
+      <span class="ftag ftag-temp">22-26°C</span>
+      <span class="ftag ftag-group">Grupo de 8+</span>
+      <span class="ftag ftag-easy">Principiante</span>
+    </div>
+    <p>El pez de acuario más reconocible del mundo. La línea azul neón y el vientre rojo los hacen inconfundibles. En grupo de 8 o más se mueven sincronizados y crean uno de los efectos más bonitos en acuario. Compatibles con la mayoría de peces pequeños y pacíficos.</p>
+    <div class="tip-box">
+      <p>💡 No los metas con peces grandes — el neón es bocado fácil para cualquier pez de más de 8-10 cm. Y asegúrate de que el acuario esté bien ciclado antes de introducirlos, son sensibles al amoníaco.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">03</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟠</div>
+      <div class="fish-titles">
+        <div class="fish-name">Guppy</div>
+        <div class="fish-sci">Poecilia reticulata</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">3-6 cm</span>
+      <span class="ftag ftag-temp">22-28°C</span>
+      <span class="ftag ftag-easy">Muy fácil</span>
+      <span class="ftag ftag-star">⭐ Ideal para empezar</span>
+    </div>
+    <p>Los guppys son el pez de iniciación por excelencia — resistentes, coloridos, activos y muy fáciles de cuidar. Los machos tienen colores y formas de cola espectaculares. Se reproducen fácilmente, lo cual puede ser una ventaja o un problema si no se controla.</p>
+    <div class="warning-box">
+      <p>⚠️ No los combines con bettas — las aletas largas de los guppys macho provocan agresividad en el betta.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">04</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟡</div>
+      <div class="fish-titles">
+        <div class="fish-name">Endler</div>
+        <div class="fish-sci">Poecilia wingei</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">2-3 cm</span>
+      <span class="ftag ftag-temp">22-28°C</span>
+      <span class="ftag ftag-easy">Muy fácil</span>
+      <span class="ftag ftag-group">Ratio 1 macho / 2-3 hembras</span>
+    </div>
+    <p>El primo pequeño del guppy. Los endlers macho son diminutos pero explosivos de color — naranja, verde neón, negro — y caben perfectamente en acuarios de 20-30 litros. Son algo más activos y resistentes que los guppys y perfectos para nano acuarios.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">05</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟤</div>
+      <div class="fish-titles">
+        <div class="fish-name">Corydoras pygmaeus (enano)</div>
+        <div class="fish-sci">Corydoras pygmaeus</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">2-3 cm</span>
+      <span class="ftag ftag-temp">22-26°C</span>
+      <span class="ftag ftag-group">Grupo de 6+</span>
+      <span class="ftag ftag-easy">Fácil</span>
+    </div>
+    <p>La versión mini del corydoras, perfecta para acuarios pequeños. A diferencia de la mayoría de corydoras que van al fondo, el pygmaeus nada también en zona media, lo que lo hace más visible. Necesita arena fina y agua limpia, igual que sus primos más grandes.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">06</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟣</div>
+      <div class="fish-titles">
+        <div class="fish-name">Rasbora de harlequín</div>
+        <div class="fish-sci">Trigonostigma heteromorpha</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">4-5 cm</span>
+      <span class="ftag ftag-temp">23-27°C</span>
+      <span class="ftag ftag-group">Grupo de 6+</span>
+      <span class="ftag ftag-easy">Principiante</span>
+    </div>
+    <p>Cuerpo anaranjado con una mancha negra triangular característica. Son tranquilos, nadan en grupo y se llevan bien con casi todo el mundo incluido el betta. Resistentes y fáciles de encontrar en cualquier tienda de acuariofilia.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">07</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🔵</div>
+      <div class="fish-titles">
+        <div class="fish-name">Betta (solo)</div>
+        <div class="fish-sci">Betta splendens</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">5-7 cm</span>
+      <span class="ftag ftag-temp">24-28°C</span>
+      <span class="ftag ftag-group">Solo o con compañeros compatibles</span>
+      <span class="ftag ftag-star">⭐ El más vistoso</span>
+    </div>
+    <p>Un betta solo en un acuario de 20-30 litros bien plantado es una opción espectacular. Su personalidad única, sus colores y sus aletas hacen que sea el protagonista absoluto del acuario. Solo recuerda: nunca con otro betta y con calentador siempre encendido.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">08</span>
+    <div class="fish-header">
+      <div class="fish-emoji">⚫</div>
+      <div class="fish-titles">
+        <div class="fish-name">Tetra cardenal</div>
+        <div class="fish-sci">Paracheirodon axelrodi</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">4-5 cm</span>
+      <span class="ftag ftag-temp">24-28°C</span>
+      <span class="ftag ftag-group">Grupo de 8+</span>
+      <span class="ftag ftag-easy">Intermedio</span>
+    </div>
+    <p>Similar al neón pero con la línea roja que recorre todo el cuerpo, no solo la mitad. Visualmente más impactante que el neón aunque algo más exigente en cuanto a parámetros — prefiere agua blanda y ácida. En grupos grandes es uno de los espectáculos más bonitos de la acuariofilia.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">09</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟢</div>
+      <div class="fish-titles">
+        <div class="fish-name">Otocinclus</div>
+        <div class="fish-sci">Otocinclus affinis</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">4-5 cm</span>
+      <span class="ftag ftag-temp">21-26°C</span>
+      <span class="ftag ftag-group">Grupo de 4-6</span>
+      <span class="ftag ftag-easy">Fácil</span>
+    </div>
+    <p>El limpiador de algas por excelencia para acuarios pequeños. Pasan el día pegados al cristal y a las plantas comiendo algas verdes. Son totalmente pacíficos y compatibles con todo. Necesitan ir en grupo pequeño y que haya algas o verduras para comer además del pienso.</p>
+  </div>
+
+  <div class="fish-card">
+    <span class="fish-number">10</span>
+    <div class="fish-header">
+      <div class="fish-emoji">🟠</div>
+      <div class="fish-titles">
+        <div class="fish-name">Platy</div>
+        <div class="fish-sci">Xiphophorus maculatus</div>
+      </div>
+    </div>
+    <div class="fish-tags">
+      <span class="ftag ftag-size">4-6 cm</span>
+      <span class="ftag ftag-temp">20-26°C</span>
+      <span class="ftag ftag-easy">Muy fácil</span>
+      <span class="ftag ftag-star">⭐ Ideal para empezar</span>
+    </div>
+    <p>Los platis son uno de los peces más recomendados para principiantes: resistentes, coloridos, pacíficos y fáciles de alimentar. Existen en decenas de variedades de color. Como los guppys, se reproducen fácilmente — controla la proporción de machos y hembras para evitar superpoblación.</p>
+  </div>
+
+  <h2>Tabla comparativa rápida</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Pez</th>
+        <th>Tamaño</th>
+        <th>Dificultad</th>
+        <th>Grupo mínimo</th>
+        <th>Acuario mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Danio margaritatus</td><td>2-3 cm</td><td>Intermedio</td><td>8-10</td><td>30L</td></tr>
+      <tr><td>Tetra neón</td><td>3-4 cm</td><td>Fácil</td><td>8+</td><td>40L</td></tr>
+      <tr><td>Guppy</td><td>3-6 cm</td><td>Muy fácil</td><td>3+</td><td>20L</td></tr>
+      <tr><td>Endler</td><td>2-3 cm</td><td>Muy fácil</td><td>4+</td><td>20L</td></tr>
+      <tr><td>Corydoras pygmaeus</td><td>2-3 cm</td><td>Fácil</td><td>6+</td><td>30L</td></tr>
+      <tr><td>Rasbora harlequín</td><td>4-5 cm</td><td>Fácil</td><td>6+</td><td>40L</td></tr>
+      <tr><td>Betta (solo)</td><td>5-7 cm</td><td>Fácil</td><td>Solo</td><td>20L</td></tr>
+      <tr><td>Tetra cardenal</td><td>4-5 cm</td><td>Intermedio</td><td>8+</td><td>40L</td></tr>
+      <tr><td>Otocinclus</td><td>4-5 cm</td><td>Fácil</td><td>4-6</td><td>30L</td></tr>
+      <tr><td>Platy</td><td>4-6 cm</td><td>Muy fácil</td><td>3+</td><td>30L</td></tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo final:</strong> Aunque el acuario sea pequeño, no llenes la lista entera. Elige 2-3 especies compatibles entre sí y crea un acuario equilibrado. Un acuario con pocas especies bien elegidas siempre queda mejor que uno sobrepoblado con de todo.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Los mejores para empezar desde cero</h3>
+    <ul class="summary-list">
+      <li>Guppys o endlers: los más fáciles y coloridos</li>
+      <li>Tetra neón: el clásico que nunca falla en grupo</li>
+      <li>Betta solo: el más espectacular para un nano acuario</li>
+      <li>Danio margaritatus: la joya oculta que sorprende a todo el mundo</li>
+      <li>Corydoras pygmaeus: limpiadores perfectos para el fondo</li>
+    </ul>
+  </div>
+
+  <a class="cta-link" href="#">→ Cómo montar un acuario plantado para principiantes</a>
+
+</div>
+</body>
+</html>

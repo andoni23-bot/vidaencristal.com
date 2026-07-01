@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los 10 errores más comunes al empezar un acuario</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #1a2a1a;
+    background: #f7f9f4;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #3d0a0a 0%, #6b1a1a 50%, #551a0a 100%);
+    color: white;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #f0a8a8;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #2a3a2a;
+    border-left: 4px solid #6b1a1a;
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  p { margin-bottom: 18px; color: #2a3a2a; }
+
+  .error-box {
+    background: white;
+    border: 1px solid #f0d0d0;
+    border-radius: 14px;
+    padding: 28px 28px 20px;
+    margin: 28px 0;
+    position: relative;
+  }
+
+  .error-number {
+    position: absolute;
+    top: -16px;
+    left: 24px;
+    background: #6b1a1a;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  .error-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #3d0a0a;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+
+  .error-box p { font-size: 16px; margin-bottom: 10px; }
+
+  .experience-box {
+    background: #fff5f5;
+    border: 1px solid #f0b8b8;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 14px 0 4px;
+  }
+
+  .experience-box::before {
+    content: '✋ Experiencia propia';
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6b1a1a;
+    margin-bottom: 8px;
+  }
+
+  .experience-box p {
+    margin: 0;
+    font-style: italic;
+    font-size: 15px;
+    color: #4a1a1a;
+  }
+
+  .tip-box {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 14px 0 4px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .summary-box {
+    background: #3d0a0a;
+    color: white;
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    margin: 48px 0 32px;
+  }
+
+  .summary-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #f0a8a8;
+    margin-bottom: 20px;
+  }
+
+  .summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .summary-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .summary-list li::before {
+    content: '✗';
+    background: #6b1a1a;
+    color: #f0a8a8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cta-link {
+    display: block;
+    text-align: center;
+    background: #6b1a1a;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .summary-box { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Errores frecuentes</div>
+  <h1>Los 10 errores más comunes al empezar un acuario</h1>
+  <p class="hero-sub">Errores que casi todos cometemos al principio — y cómo evitarlos antes de que te cuesten peces.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Cuando uno empieza en la acuariofilia, el entusiasmo puede más que la paciencia. El resultado casi siempre es el mismo: agua turbia, peces enfermos o muertos, y frustración. La buena noticia es que todos estos errores son evitables si sabes de antemano cuáles son.</p>
+
+  <p>Aquí van los diez más habituales, algunos aprendidos por experiencia propia.</p>
+
+  <div class="error-box">
+    <span class="error-number">Error 01</span>
+    <h3>No hacer el ciclado</h3>
+    <p>Es el error más común y el más grave. Mucha gente compra el acuario, lo llena de agua y mete los peces al día siguiente. Sin el ciclo del nitrógeno establecido, el amoníaco se acumula rápidamente y mata a los peces aunque el agua parezca limpia.</p>
+    <p>El ciclado tarda entre 4 y 6 semanas. No hay atajo que lo reemplace del todo.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Usa bacterias en botella y pide al vendedor un poco de esponja de filtro de un acuario ya establecido para acelerar el proceso.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 02</span>
+    <h3>Meter peces incompatibles</h3>
+    <p>En la tienda todo parece compatible. La realidad es otra. Hay peces agresivos que atacan a los más tranquilos, especies territoriales que no toleran a otras de su misma familia, y peces que necesitan condiciones de agua muy distintas entre sí.</p>
+    <div class="experience-box">
+      <p>Me pasó con mis primeros peces: metí especies incompatibles sin investigar. El resultado fue estrés constante, peleas y bajas en pocos días. Desde entonces, antes de comprar cualquier pez busco su ficha completa y compruebo compatibilidad.</p>
+    </div>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Antes de comprar, investiga temperatura, pH, carácter y compatibilidad de cada especie. Hay herramientas online que te ayudan a comprobar si tus peces son compatibles entre sí.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 03</span>
+    <h3>Usar madera sin prepararla</h3>
+    <p>La madera natural es preciosa en un acuario, pero si la metes directamente sin prepararla, soltará taninos al agua y la teñirá de marrón oscuro. Además puede liberar sustancias que alteren el pH o incluso sean tóxicas si la madera no es apta.</p>
+    <div class="experience-box">
+      <p>Lo comprobé en mis propias carnes: metí un trozo de madera sin hervirla y al día siguiente el agua parecía té. Tuve que vaciar parte del acuario y empezar de nuevo. Desde entonces, siempre hiervo la madera durante al menos una hora antes de meterla, y la remojo varios días cambiando el agua.</p>
+    </div>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Hierve la madera durante 1-2 horas y déjala en remojo varios días antes de meterla. Cambia el agua del remojo a diario hasta que salga casi transparente.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 04</span>
+    <h3>Usar arena o grava sin lavar ni tratar</h3>
+    <p>La arena o grava que se vende en tiendas de construcción o cantera no está preparada para acuario. Puede contener polvo, residuos químicos, bacterias no deseadas o minerales que alteren drásticamente la química del agua.</p>
+    <div class="experience-box">
+      <p>Usé arena de cantera sin lavarla ni tratarla. El agua se quedó completamente turbia y tardé días en solucionarlo. Por si fuera poco, los parámetros del agua se dispararon. Un error caro en tiempo y estrés.</p>
+    </div>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Usa siempre sustrato específico para acuario, o si usas arena de cantera, lávala exhaustivamente con agua corriente durante un buen rato y mide los parámetros del agua antes de meter ningún pez.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 05</span>
+    <h3>No tratar el agua del grifo</h3>
+    <p>El agua del grifo contiene cloro y cloraminas para ser apta para el consumo humano. Para los peces, esas sustancias son tóxicas y dañan las branquias. Muchos principiantes llenan el acuario directamente del grifo sin acondicionarla.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Añade siempre acondicionador de agua antes de meter agua nueva al acuario. Es barato, rápido y elimina el cloro en segundos.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 06</span>
+    <h3>Sobrealimentar a los peces</h3>
+    <p>Los peces comen lo que les echas y piden más aunque no lo necesiten. El exceso de comida se descompone en el fondo, dispara el amoníaco y ensucia el agua rápidamente. Es una de las causas más comunes de agua turbia y peces enfermos.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Alimenta una vez al día, solo la cantidad que consuman en 2-3 minutos. Si sobra comida en el fondo, estás echando demasiado.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 07</span>
+    <h3>Elegir un acuario demasiado pequeño</h3>
+    <p>Los acuarios pequeños parecen más fáciles de mantener, pero es todo lo contrario. El agua se desestabiliza mucho más rápido ante cualquier cambio de temperatura, sobrealimentación o muerte de un pez. Además, limitan mucho las especies que puedes tener.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Para empezar, apunta a un mínimo de 60 litros. Es más fácil de mantener estable y te da más margen de error.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 08</span>
+    <h3>Limpiar el filtro con agua del grifo</h3>
+    <p>Cuando el filtro parece sucio, el instinto es limpiarlo a fondo con agua corriente. Error grave: el cloro del grifo mata todas las bacterias beneficiosas que has tardado semanas en cultivar. Es como reiniciar el ciclado desde cero.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Limpia el filtro siempre con agua extraída del propio acuario durante el cambio semanal. Así mantienes las bacterias vivas.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 09</span>
+    <h3>No investigar el tamaño adulto de los peces</h3>
+    <p>En la tienda muchos peces se venden siendo aún crías y parecen pequeños e inofensivos. Algunos de ellos crecen hasta tamaños que requieren acuarios de cientos de litros. El plecos común, por ejemplo, puede llegar a medir más de 40 cm.</p>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Busca siempre el tamaño adulto de cada especie antes de comprarla. Si no cabe en tu acuario de adulto, no es el pez para ti.</p>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <span class="error-number">Error 10</span>
+    <h3>Añadir plantas sin comprobar compatibilidad</h3>
+    <p>Las plantas son beneficiosas en general, pero no todas encajan con todos los peces. Algunas alteran el pH del agua, otras necesitan condiciones muy específicas de luz o CO2, y hay peces que simplemente las arrancan o se las comen.</p>
+    <div class="experience-box">
+      <p>Aprendí que hay plantas que no benefician a ciertos peces — algunas pueden alterar parámetros que afectan directamente su salud. Ahora siempre compruebo compatibilidad planta-pez antes de añadir nada nuevo.</p>
+    </div>
+    <div class="tip-box">
+      <p>💡 <strong>Solución:</strong> Para empezar, opta por plantas fáciles y resistentes como anubias, java fern o vallisneria. Son compatibles con la mayoría de peces de agua dulce y no necesitan CO2.</p>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3>Los 10 errores en resumen</h3>
+    <ul class="summary-list">
+      <li>No hacer el ciclado antes de meter peces</li>
+      <li>Meter peces incompatibles entre sí</li>
+      <li>Usar madera sin hervir ni remojar</li>
+      <li>Usar arena de cantera sin lavar ni tratar</li>
+      <li>No tratar el agua del grifo con acondicionador</li>
+      <li>Sobrealimentar a los peces</li>
+      <li>Elegir un acuario demasiado pequeño</li>
+      <li>Limpiar el filtro con agua del grifo</li>
+      <li>No investigar el tamaño adulto de los peces</li>
+      <li>Añadir plantas sin comprobar compatibilidad</li>
+    </ul>
+  </div>
+
+  <p>Cometer alguno de estos errores no significa que seas mal acuarista — significa que estás aprendiendo. Lo importante es conocerlos de antemano para minimizar el daño.</p>
+
+  <a class="cta-link" href="#">→ ¿Qué necesitas exactamente para montar un acuario? Lista completa de material</a>
+
+</div>
+
+</body>
+</html>

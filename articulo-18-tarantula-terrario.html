@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrario para tarántula: especie, tamaño y decoración</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a2a1a;background:#f5f0f7}
+  .hero{background:linear-gradient(135deg,#0a0a2a 0%,#2a0a4a 50%,#1a0a3a 100%);color:white;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#d8b8f8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:700px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:#1a2a1a;border-left:4px solid #2a0a4a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a3a2a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#0a0a2a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #d0b8e8}
+  .species-card{background:white;border:1px solid #d0b8e8;border-radius:14px;padding:24px;margin:16px 0}
+  .species-header{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+  .species-emoji{font-size:34px;flex-shrink:0}
+  .species-name{font-family:'Lora',serif;font-size:19px;font-weight:600;color:#0a0a2a;margin-bottom:2px}
+  .species-sci{font-size:12px;color:#6a4a8a;font-style:italic}
+  .stags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .stag{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px}
+  .stag-easy{background:#e8f5ee;color:#0a4a2a}
+  .stag-terr{background:#e8f0fb;color:#0a2a5a}
+  .stag-arb{background:#f5eef8;color:#3a0a5a}
+  .stag-temp{background:#fff8e0;color:#5a3a00}
+  .stag-docile{background:#e8fbee;color:#0a4a2a}
+  .species-card p{font-size:15px;margin-bottom:8px}
+  .setup-box{background:white;border:1px solid #d0b8e8;border-left:5px solid #2a0a4a;border-radius:0 12px 12px 0;padding:24px;margin:24px 0}
+  .setup-box h3{font-family:'Lora',serif;font-size:19px;color:#0a0a2a;margin-bottom:10px}
+  .setup-box p{font-size:15px;margin-bottom:8px}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .tip-box strong{color:#3a2d00}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .summary-box{background:#0a0a2a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#d8b8f8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85);align-items:flex-start}
+  .summary-list li::before{content:'✓';background:#2a0a4a;color:#d8b8f8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#2a0a4a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag">Terrarios</div>
+  <h1>Terrario para tarántula: especie, tamaño y decoración</h1>
+  <p class="hero-sub">Las tarántulas son mascotas fascinantes, de bajo mantenimiento y con una comunidad muy fiel — guía completa para empezar bien.</p>
+</div>
+<div class="article-wrap">
+  <p class="intro">Las tarántulas generan rechazo en muchas personas, pero quienes las tienen saben que son animales fascinantes, de bajo mantenimiento, silenciosos y que no necesitan ni paseos ni atención constante. Si buscas una mascota diferente y no tienes miedo a los arácnidos, merece la pena conocerlas mejor.</p>
+
+  <h2>Especies recomendadas para principiantes</h2>
+
+  <div class="species-card">
+    <div class="species-header"><div class="species-emoji">🕷️</div><div><div class="species-name">Brachypelma hamorii</div><div class="species-sci">Tarántula rodillas naranja mexicana</div></div></div>
+    <div class="stags"><span class="stag stag-easy">Muy fácil</span><span class="stag stag-terr">Terrestre</span><span class="stag stag-docile">Muy dócil</span></div>
+    <p>La tarántula más recomendada para principiantes. Lenta, dócil, raramente defensiva y visualmente espectacular con su cuerpo negro y las rodillas naranja. Crece despacio pero vive décadas. Perfecta como primera tarántula.</p>
+  </div>
+
+  <div class="species-card">
+    <div class="species-header"><div class="species-emoji">🕸️</div><div><div class="species-name">Grammostola pulchripes</div><div class="species-sci">Tarántula dorada de Chile</div></div></div>
+    <div class="stags"><span class="stag stag-easy">Muy fácil</span><span class="stag stag-terr">Terrestre</span><span class="stag stag-docile">Dócil</span></div>
+    <p>Una de las tarántulas más dóciles del mundo. Cuerpo dorado muy vistoso. Muy tranquila y tolerante al manejo. Como todas las Grammostola crece muy lentamente pero puede vivir 20-30 años. Ideal para quien quiere una tarántula de exposición.</p>
+  </div>
+
+  <div class="species-card">
+    <div class="species-header"><div class="species-emoji">🌿</div><div><div class="species-name">Tliltocatl albopilosus</div><div class="species-sci">Tarántula rizada de Honduras</div></div></div>
+    <div class="stags"><span class="stag stag-easy">Fácil</span><span class="stag stag-terr">Terrestre</span><span class="stag stag-docile">Dócil</span><span class="stag stag-temp">Crece más rápido</span></div>
+    <p>Muy popular como primera tarántula por su carácter tranquilo y su crecimiento más rápido que las Brachypelma. Los pelos rizados le dan un aspecto muy característico. Tolera bien las variaciones de humedad y temperatura.</p>
+  </div>
+
+  <div class="warning-box"><p>⚠️ <strong>Importante:</strong> Evita las tarántulas del género Pterinochilus, Poecilotheria o Haplopelma para empezar — son rápidas, defensivas y con veneno más potente. Son para aficionados con experiencia.</p></div>
+
+  <h2>El terrario: tamaño y configuración</h2>
+
+  <div class="setup-box">
+    <h3>Tamaño del terrario</h3>
+    <p>La regla general para tarántulas terrestres: el terrario debe tener una longitud de al menos <strong>2-3 veces la envergadura de patas</strong> del animal y una anchura similar. Una tarántula adulta de 12-15 cm de envergadura necesita un terrario de unos 30x30 cm como mínimo.</p>
+    <p>La altura no debe ser excesiva para tarántulas terrestres — si caen desde demasiada altura pueden morir. Máximo 2-3 veces la longitud del cuerpo en altura útil (sin contar el sustrato).</p>
+  </div>
+
+  <div class="setup-box">
+    <h3>Sustrato</h3>
+    <p>El sustrato es uno de los elementos más importantes. Para la mayoría de tarántulas terrestres de principiante funciona bien una mezcla de <strong>tierra de coco + tierra vegetal sin fertilizantes + un poco de arena</strong>. Profundidad mínima de 8-10 cm para que puedan excavar.</p>
+    <p>Mantén el sustrato ligeramente húmedo en un lado (no encharcado) y seco en el otro. Esto crea un gradiente de humedad que la tarántula usará según sus necesidades.</p>
+  </div>
+
+  <div class="setup-box">
+    <h3>Decoración y escondites</h3>
+    <p>Las tarántulas necesitan al menos un escondite donde pasar el día — son animales nocturnos que en la naturaleza viven en madrigueras. Un trozo de corcho, media maceta de barro o un escondite de resina funcionan perfectamente.</p>
+    <p>No sobrecargues el terrario — la tarántula necesita espacio para moverse y cazar. Menos es más en decoración.</p>
+  </div>
+
+  <h2>Alimentación y mantenimiento</h2>
+  <p>Las tarántulas adultas comen <strong>una vez cada 7-14 días</strong>. Los ejemplares jóvenes pueden comer cada 3-5 días. El alimento principal son grillos o cucarachas del tamaño adecuado — nunca más grande que el abdomen de la tarántula.</p>
+  <p>Retira siempre los restos de comida no consumidos a las 24 horas. Un grillo suelto en el terrario puede dañar a una tarántula durante la muda.</p>
+  <div class="tip-box"><p>💡 <strong>Durante la muda:</strong> La tarántula se tumba boca arriba y parece muerta. Es completamente normal. No la molestes, no le des comida y no metas la mano. La muda puede durar horas. Después de mudar necesita 1-2 semanas para endurecer el exoesqueleto antes de volver a comer.</p></div>
+
+  <div class="summary-box">
+    <h3>Resumen</h3>
+    <ul class="summary-list">
+      <li>Para empezar: Brachypelma hamorii, Grammostola pulchripes o Tliltocatl albopilosus</li>
+      <li>Terrario 2-3 veces la envergadura de patas, no demasiado alto</li>
+      <li>Sustrato de tierra de coco + tierra vegetal, 8-10 cm de profundidad</li>
+      <li>Un escondite mínimo, decoración simple</li>
+      <li>Alimentar cada 7-14 días con insectos del tamaño adecuado</li>
+      <li>Durante la muda: no molestar, no alimentar</li>
+    </ul>
+  </div>
+  <a class="cta-link" href="#">→ Terrario húmedo vs seco: cuál necesita tu animal</a>
+</div>
+</body>
+</html>

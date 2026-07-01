@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué necesitas para montar un acuario: lista completa de material</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #1a2a1a;
+    background: #f7f9f4;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0d3b52 0%, #1a6b8a 50%, #0a4a6b 100%);
+    color: white;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #a8d8f0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #2a3a2a;
+    border-left: 4px solid #1a6b8a;
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  p { margin-bottom: 18px; color: #2a3a2a; }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d3b52;
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c8e0ea;
+  }
+
+  .product-card {
+    background: white;
+    border: 1px solid #c8e0ea;
+    border-radius: 14px;
+    padding: 24px 24px 20px;
+    margin: 24px 0;
+  }
+
+  .product-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .product-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .product-info { flex: 1; }
+
+  .product-name {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #0d3b52;
+    margin-bottom: 2px;
+  }
+
+  .product-subtitle {
+    font-size: 13px;
+    color: #5a8a9a;
+    font-weight: 500;
+  }
+
+  .product-card p { font-size: 15px; margin-bottom: 10px; }
+
+  .essential-badge {
+    display: inline-block;
+    background: #e8f4fb;
+    color: #0d3b52;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .optional-badge {
+    display: inline-block;
+    background: #f0f7e8;
+    color: #2a5a0a;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .rec-box {
+    background: #f0f7fb;
+    border: 1px solid #b8d8ea;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 10px;
+  }
+
+  .rec-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1a6b8a;
+    margin-bottom: 6px;
+  }
+
+  .rec-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .rec-pill {
+    background: white;
+    border: 1px solid #b8d8ea;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 13px;
+    color: #0d3b52;
+    font-weight: 500;
+  }
+
+  .rec-pill.top { border-color: #1a6b8a; background: #e8f4fb; }
+
+  .price-range {
+    font-size: 13px;
+    color: #5a8a9a;
+    margin-top: 6px;
+  }
+
+  .tip-box {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+  }
+
+  .budget-table th {
+    background: #0d3b52;
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .budget-table th:first-child { border-radius: 8px 0 0 0; }
+  .budget-table th:last-child { border-radius: 0 8px 0 0; text-align: right; }
+
+  .budget-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e0edf2;
+    color: #2a3a2a;
+  }
+
+  .budget-table td:last-child { text-align: right; font-weight: 500; color: #0d3b52; }
+  .budget-table tr:nth-child(even) td { background: #f5fafc; }
+
+  .budget-table tfoot td {
+    font-weight: 600;
+    font-size: 16px;
+    border-top: 2px solid #1a6b8a;
+    border-bottom: none;
+    background: #e8f4fb;
+    color: #0d3b52;
+  }
+
+  .summary-box {
+    background: #0d3b52;
+    color: white;
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    margin: 48px 0 32px;
+  }
+
+  .summary-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #a8d8f0;
+    margin-bottom: 20px;
+  }
+
+  .checklist {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .checklist li::before {
+    content: '☐';
+    font-size: 18px;
+    color: #a8d8f0;
+    flex-shrink: 0;
+  }
+
+  .cta-link {
+    display: block;
+    text-align: center;
+    background: #1a6b8a;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .summary-box { padding: 28px 22px; }
+    .checklist { grid-template-columns: 1fr; }
+    .product-header { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Lista de compra</div>
+  <h1>Qué necesitas para montar un acuario: lista completa de material</h1>
+  <p class="hero-sub">Todo lo que hay que comprar antes de meter el primer pez, con recomendaciones de productos probados y precio orientativo.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Una de las preguntas más frecuentes cuando uno se mete en la acuariofilia es: ¿qué necesito exactamente? La respuesta depende del tipo de acuario que quieras montar, pero hay una base común que todo acuario de agua dulce necesita sí o sí.</p>
+
+  <p>En esta guía te detallo cada elemento, para qué sirve y qué marcas o modelos tienen mejor relación calidad-precio actualmente.</p>
+
+  <h2>Material imprescindible</h2>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🐠</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">El acuario</div>
+        <div class="product-subtitle">El tanque donde vivirán tus peces</div>
+      </div>
+    </div>
+    <p>Para empezar, lo ideal es un acuario de entre 60 y 100 litros. Los acuarios pequeños parecen más manejables pero son más inestables químicamente: cualquier cambio de temperatura o muerte de un pez afecta mucho más al equilibrio del agua.</p>
+    <p>Puedes comprar un acuario solo (urna) o un kit completo que ya incluye filtro e iluminación. Los kits son buena opción para principiantes porque te ahorran la duda de si el equipo es compatible.</p>
+    <div class="rec-box">
+      <div class="rec-label">Marcas recomendadas</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Aquael</span>
+        <span class="rec-pill top">Fluval</span>
+        <span class="rec-pill">Tetra</span>
+        <span class="rec-pill">Juwel</span>
+      </div>
+      <div class="price-range">Precio orientativo: 40-150€ según tamaño</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">💧</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Filtro</div>
+        <div class="product-subtitle">Los pulmones del acuario</div>
+      </div>
+    </div>
+    <p>El filtro es el elemento más importante del acuario. Su función no es solo limpiar el agua de suciedad visible, sino albergar las bacterias beneficiosas que convierten el amoníaco tóxico en sustancias menos dañinas. Sin un buen filtro, el agua se envenena aunque parezca limpia.</p>
+    <p>Para acuarios de hasta 100 litros, un filtro interno o de mochila es suficiente. Para acuarios más grandes, un filtro externo ofrece mejor rendimiento. La regla general es que el filtro mueva al menos 4 veces el volumen del acuario por hora.</p>
+    <div class="rec-box">
+      <div class="rec-label">Mejores opciones por rango de precio</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Eheim Classic (calidad-precio)</span>
+        <span class="rec-pill top">JBL CristalProfi (completo)</span>
+        <span class="rec-pill">Fluval (gama alta)</span>
+        <span class="rec-pill">Tetra (económico)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 20-80€ según tipo y tamaño</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🌡️</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Calentador</div>
+        <div class="product-subtitle">Para mantener la temperatura estable</div>
+      </div>
+    </div>
+    <p>La mayoría de peces tropicales de agua dulce necesitan entre 24 y 26°C de forma constante. Una regla sencilla para elegir la potencia correcta: 1 watio por cada litro de agua. Para un acuario de 100 litros, un calentador de 100W es lo adecuado.</p>
+    <p>Elige siempre uno sumergible con termostato regulable. Evita los calentadores sin regulación que vienen en kits muy baratos — mantienen una temperatura fija que puede no ser la adecuada para tus peces.</p>
+    <div class="rec-box">
+      <div class="rec-label">Marcas más recomendadas</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Eheim Jager (el más fiable)</span>
+        <span class="rec-pill top">Fluval E (con pantalla LCD)</span>
+        <span class="rec-pill">Tetra HT (económico)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 15-50€</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🌡️</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Termómetro</div>
+        <div class="product-subtitle">Para verificar que el calentador funciona bien</div>
+      </div>
+    </div>
+    <p>Aunque el calentador tenga termostato incorporado, es importante tener un termómetro independiente. Los termostatos pueden fallar o dar lecturas incorrectas, y un pez sometido a temperatura incorrecta se estresa y enferma con facilidad.</p>
+    <div class="rec-box">
+      <div class="rec-label">Opciones recomendadas</div>
+      <div class="rec-products">
+        <span class="rec-pill top">JBL Float (precisión y durabilidad)</span>
+        <span class="rec-pill">Termómetro digital con sonda (más preciso)</span>
+        <span class="rec-pill">Tira adhesiva exterior (lo más barato)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 3-15€</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🪨</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Sustrato</div>
+        <div class="product-subtitle">La base del acuario</div>
+      </div>
+    </div>
+    <p>El sustrato no es solo decoración. Sirve como superficie donde se asientan las bacterias beneficiosas y, si tienes plantas, como anclaje y fuente de nutrientes. Para un acuario de peces sin plantas, la grava fina neutra es la opción más sencilla. Para acuario plantado, necesitarás un sustrato nutritivo específico.</p>
+    <p>Sea cual sea el sustrato que elijas, lávalo siempre muy bien con agua corriente antes de meterlo al acuario. El polvo de fábrica puede enturbiar el agua durante días.</p>
+    <div class="rec-box">
+      <div class="rec-label">Sustratos recomendados</div>
+      <div class="rec-products">
+        <span class="rec-pill top">JBL Manado (plantado, muy popular)</span>
+        <span class="rec-pill top">Aquael Aqua Grunt (grava neutra)</span>
+        <span class="rec-pill">ADA Amazonia (plantado, gama alta)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 10-40€ según tipo y cantidad</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">💡</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Iluminación</div>
+        <div class="product-subtitle">Para los peces y especialmente para las plantas</div>
+      </div>
+    </div>
+    <p>Si tienes plantas, la iluminación es crítica: necesitan luz para hacer la fotosíntesis. Pero incluso sin plantas, la luz es importante para el bienestar de los peces y para poder disfrutar del acuario. Busca iluminación LED específica para acuario — consume poco y dura mucho.</p>
+    <div class="rec-box">
+      <div class="rec-label">Marcas recomendadas</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Chihiros (calidad-precio excelente)</span>
+        <span class="rec-pill top">Fluval Plant 3.0 (gama alta)</span>
+        <span class="rec-pill">Aquael Leddy (económico)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 20-100€</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🧪</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Acondicionador de agua</div>
+        <div class="product-subtitle">Elimina el cloro del agua del grifo</div>
+      </div>
+    </div>
+    <p>El agua del grifo contiene cloro y cloraminas que son tóxicos para los peces. El acondicionador los neutraliza en segundos. Es uno de los productos más baratos y más importantes — úsalo siempre que añadas agua nueva al acuario, sin excepción.</p>
+    <div class="rec-box">
+      <div class="rec-label">Los más recomendados</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Seachem Prime (el más completo y concentrado)</span>
+        <span class="rec-pill top">API Stress Coat (con aloe vera)</span>
+        <span class="rec-pill">Tetra AquaSafe (el más popular)</span>
+        <span class="rec-pill">JBL Biotopol (buena relación precio)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 5-15€ (dura mucho por ser concentrado)</div>
+    </div>
+    <div class="tip-box" style="margin-top:12px;">
+      <p>💡 <strong>Consejo:</strong> El Seachem Prime es el favorito de la comunidad acuarista. Además de eliminar cloro, también desintoxica temporalmente el amoníaco y los nitritos, lo que lo hace especialmente útil durante el ciclado.</p>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">📊</div>
+      <div class="product-info">
+        <div class="essential-badge">Imprescindible</div>
+        <div class="product-name">Test de agua</div>
+        <div class="product-subtitle">Para medir los parámetros del acuario</div>
+      </div>
+    </div>
+    <p>El agua puede parecer perfectamente limpia y estar llena de amoníaco o nitritos que matan a los peces en horas. El test de agua es la única forma de saber realmente en qué estado está el acuario. Es especialmente importante durante el ciclado y las primeras semanas.</p>
+    <p>Los tests en líquido son mucho más precisos que las tiras reactivas, aunque algo más caros. A largo plazo merecen la pena.</p>
+    <div class="rec-box">
+      <div class="rec-label">Más recomendados</div>
+      <div class="rec-products">
+        <span class="rec-pill top">API Freshwater Master Test Kit (el más completo)</span>
+        <span class="rec-pill">JBL ProScan (con app móvil)</span>
+        <span class="rec-pill">Tiras reactivas Tetra (económico, menos preciso)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 10-35€</div>
+    </div>
+  </div>
+
+  <h2>Material recomendado (no imprescindible, pero útil)</h2>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🧫</div>
+      <div class="product-info">
+        <div class="optional-badge">Recomendado</div>
+        <div class="product-name">Bacterias en botella</div>
+        <div class="product-subtitle">Para acelerar el ciclado</div>
+      </div>
+    </div>
+    <p>No son imprescindibles pero acortan el ciclado considerablemente. Contienen colonias de bacterias nitrificantes ya cultivadas que ayudan a establecer el ciclo del nitrógeno más rápido.</p>
+    <div class="rec-box">
+      <div class="rec-label">Más usados</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Seachem Stability</span>
+        <span class="rec-pill">Fluval Cycle</span>
+        <span class="rec-pill">Tetra SafeStart</span>
+      </div>
+      <div class="price-range">Precio orientativo: 8-20€</div>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-icon">🧹</div>
+      <div class="product-info">
+        <div class="optional-badge">Recomendado</div>
+        <div class="product-name">Sifón de fondo</div>
+        <div class="product-subtitle">Para limpiar el sustrato en los cambios de agua</div>
+      </div>
+    </div>
+    <p>Con el sifón puedes retirar los restos de comida y desechos del fondo mientras cambias el agua. Es muy cómodo y hace el mantenimiento semanal mucho más eficiente. Los hay manuales y eléctricos.</p>
+    <div class="rec-box">
+      <div class="rec-label">Opciones</div>
+      <div class="rec-products">
+        <span class="rec-pill top">Eheim Quick Vac Pro (eléctrico, muy cómodo)</span>
+        <span class="rec-pill">Sifón manual básico (económico, funciona bien)</span>
+      </div>
+      <div class="price-range">Precio orientativo: 5-40€</div>
+    </div>
+  </div>
+
+  <h2>Presupuesto orientativo para empezar</h2>
+
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Opción económica</th>
+        <th style="text-align:right">Opción media</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Acuario 80L</td><td>Kit básico</td><td>50-80€</td></tr>
+      <tr><td>Filtro</td><td>Tetra / básico</td><td>25-45€</td></tr>
+      <tr><td>Calentador</td><td>Tetra HT</td><td>15-25€</td></tr>
+      <tr><td>Termómetro</td><td>Tira adhesiva / vidrio</td><td>3-10€</td></tr>
+      <tr><td>Sustrato (5kg)</td><td>Grava neutra</td><td>10-20€</td></tr>
+      <tr><td>Iluminación</td><td>Aquael Leddy</td><td>20-35€</td></tr>
+      <tr><td>Acondicionador</td><td>Tetra AquaSafe</td><td>5-10€</td></tr>
+      <tr><td>Test de agua</td><td>Tiras reactivas</td><td>10-25€</td></tr>
+      <tr><td>Bacterias + sifón</td><td>Opcionales</td><td>15-30€</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2">Total orientativo</td><td>150-280€</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> No escatimes en filtro y calentador. Son los dos elementos que más afectan a la salud de tus peces y los que más lamentarás si compras baratos. En cambio, el sustrato o la decoración son donde puedes ahorrar sin problema.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Lista de compra rápida</h3>
+    <ul class="checklist">
+      <li>Acuario (mín. 60L)</li>
+      <li>Filtro adecuado al volumen</li>
+      <li>Calentador (1W por litro)</li>
+      <li>Termómetro independiente</li>
+      <li>Sustrato lavado</li>
+      <li>Iluminación LED</li>
+      <li>Acondicionador de agua</li>
+      <li>Test de agua</li>
+      <li>Bacterias en botella</li>
+      <li>Sifón de fondo</li>
+    </ul>
+  </div>
+
+  <p>Con esta lista tienes todo lo que necesitas para montar un acuario de agua dulce sano y estable. Recuerda que el orden importa: primero el equipo, luego el ciclado, y solo después los peces.</p>
+
+  <a class="cta-link" href="#">→ ¿Qué es el ciclado y por qué es tan importante? Siguiente artículo</a>
+
+</div>
+
+</body>
+</html>

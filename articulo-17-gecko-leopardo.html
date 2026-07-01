@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrario para gecko leopardo: guía completa de cuidados</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a2a1a;background:#f7f5f0}
+  .hero{background:linear-gradient(135deg,#2a1a0a 0%,#6a4a1a 50%,#3a2a0a 100%);color:white;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#f8d8a8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:700px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:#1a2a1a;border-left:4px solid #6a4a1a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a3a2a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#2a1a0a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #e0c8a0}
+  .specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+  .spec-card{background:white;border:1px solid #e0c8a0;border-radius:12px;padding:16px;text-align:center}
+  .spec-icon{font-size:24px;margin-bottom:6px}
+  .spec-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#8a6a2a;margin-bottom:4px}
+  .spec-value{font-size:15px;font-weight:600;color:#2a1a0a}
+  .temp-diagram{background:white;border:1px solid #e0c8a0;border-radius:14px;overflow:hidden;margin:24px 0}
+  .temp-zone{padding:16px 24px;display:flex;align-items:center;gap:16px}
+  .temp-zone:not(:last-child){border-bottom:1px dashed #e0c8a0}
+  .zone-icon{font-size:26px;flex-shrink:0;width:36px;text-align:center}
+  .zone-info{flex:1}
+  .zone-name{font-weight:600;font-size:15px;color:#2a1a0a;margin-bottom:2px}
+  .zone-desc{font-size:13px;color:#6a5a3a;line-height:1.5}
+  .zone-temp{font-size:13px;font-weight:600;color:#8a4a00;margin-top:4px}
+  .zone-hot{background:#fff8f0}.zone-cool{background:#f8f5f0}.zone-night{background:#f0f0f8}
+  .info-box{background:white;border:1px solid #e0c8a0;border-left:5px solid #6a4a1a;border-radius:0 12px 12px 0;padding:24px;margin:24px 0}
+  .info-box h3{font-family:'Lora',serif;font-size:19px;color:#2a1a0a;margin-bottom:10px}
+  .info-box p{font-size:15px;margin-bottom:8px}
+  .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+  .food-card{background:white;border:1px solid #e0c8a0;border-radius:10px;padding:16px;text-align:center}
+  .food-icon{font-size:26px;margin-bottom:6px}
+  .food-name{font-weight:600;font-size:14px;color:#2a1a0a;margin-bottom:4px}
+  .food-freq{font-size:12px;color:#8a6a2a;font-weight:600;margin-bottom:6px}
+  .food-card p{font-size:12px;color:#5a4a2a;margin:0;line-height:1.5}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .tip-box strong{color:#3a2d00}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .summary-box{background:#2a1a0a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#f8d8a8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85);align-items:flex-start}
+  .summary-list li::before{content:'✓';background:#6a4a1a;color:#f8d8a8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#6a4a1a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag">Guía de especie</div>
+  <h1>Terrario para gecko leopardo: guía completa de cuidados</h1>
+  <p class="hero-sub">El reptil perfecto para empezar — dócil, fácil de cuidar y con una personalidad única.</p>
+</div>
+<div class="article-wrap">
+  <p class="intro">El gecko leopardo es probablemente el reptil más recomendado para principiantes. Es dócil, relativamente fácil de cuidar, no necesita iluminación UV y se adapta bien al manejo. Con los cuidados correctos puede vivir más de 15-20 años.</p>
+
+  <h2>Ficha técnica</h2>
+  <div class="specs-grid">
+    <div class="spec-card"><div class="spec-icon">📏</div><div class="spec-label">Tamaño adulto</div><div class="spec-value">20-28 cm</div></div>
+    <div class="spec-card"><div class="spec-icon">⏳</div><div class="spec-label">Esperanza de vida</div><div class="spec-value">15-20 años</div></div>
+    <div class="spec-card"><div class="spec-icon">🌡️</div><div class="spec-label">Zona caliente</div><div class="spec-value">28-32 °C</div></div>
+    <div class="spec-card"><div class="spec-icon">❄️</div><div class="spec-label">Zona fría</div><div class="spec-value">22-26 °C</div></div>
+    <div class="spec-card"><div class="spec-icon">🏠</div><div class="spec-label">Terrario mínimo</div><div class="spec-value">60x40x40 cm</div></div>
+    <div class="spec-card"><div class="spec-icon">🍖</div><div class="spec-label">Alimentación</div><div class="spec-value">Insectívoro</div></div>
+    <div class="spec-card"><div class="spec-icon">🌙</div><div class="spec-label">Actividad</div><div class="spec-value">Nocturno</div></div>
+    <div class="spec-card"><div class="spec-icon">⭐</div><div class="spec-label">Dificultad</div><div class="spec-value">Principiante</div></div>
+  </div>
+
+  <h2>El terrario ideal</h2>
+  <p>El gecko leopardo es terrestre — no trepa paredes como otros geckos. Necesita espacio horizontal, no vertical. Un terrario de <strong>60x40x40 cm</strong> es el mínimo para un adulto, aunque 80x40 es mejor.</p>
+  <p>El terrario debe ser seco — el gecko leopardo viene del desierto y la humedad alta le causa problemas respiratorios. La única excepción es una cámara húmeda para la muda.</p>
+
+  <h2>El gradiente de temperatura: lo más importante</h2>
+  <p>El gecko leopardo regula su temperatura moviéndose entre zonas más o menos cálidas. El terrario debe tener un gradiente claro de temperatura de un extremo al otro.</p>
+  <div class="temp-diagram">
+    <div class="temp-zone zone-hot"><div class="zone-icon">🔥</div><div class="zone-info"><div class="zone-name">Zona caliente (un lado)</div><div class="zone-desc">Aquí se coloca la manta térmica o placa calefactora. El gecko viene aquí a digerir y termorregularse.</div><div class="zone-temp">28-32°C en superficie</div></div></div>
+    <div class="temp-zone zone-cool"><div class="zone-icon">🌿</div><div class="zone-info"><div class="zone-name">Zona fría (lado opuesto)</div><div class="zone-desc">Sin calefacción. El gecko viene aquí a refrescarse. Debe haber un escondite en esta zona también.</div><div class="zone-temp">22-26°C</div></div></div>
+    <div class="temp-zone zone-night"><div class="zone-icon">🌙</div><div class="zone-info"><div class="zone-name">Temperatura nocturna</div><div class="zone-desc">Por la noche la temperatura puede bajar. La manta térmica mantiene el suelo caliente para la digestión.</div><div class="zone-temp">No bajar de 18°C</div></div></div>
+  </div>
+
+  <div class="warning-box"><p>⚠️ <strong>Importante:</strong> Usa siempre termómetro para verificar las temperaturas reales. Los termostatos pueden fallar y una temperatura incorrecta sostenida es una de las causas más comunes de problemas de salud en geckos leopardo.</p></div>
+
+  <div class="info-box">
+    <h3>Sustrato recomendado</h3>
+    <p>Para geckos leopardo adultos: <strong>papel de cocina, baldosas o alfombra de reptil</strong>. Son fáciles de limpiar y sin riesgo de impactación.</p>
+    <p>Evita arena suelta, coco o cualquier sustrato que el gecko pueda ingerir al cazar. La impactación (ingestión de sustrato) es una causa frecuente de muerte en geckos jóvenes.</p>
+    <p>La excepción es la tierra de jardín o mezcla de arcilla sin fertilizantes para adultos mayores con experiencia del dueño — pero no para empezar.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>Escondites: imprescindibles</h3>
+    <p>El gecko leopardo necesita al menos <strong>tres escondites</strong>: uno en la zona caliente, uno en la zona fría y uno húmedo para la muda.</p>
+    <p>El escondite húmedo es crítico. Llénalo con musgo húmedo o vermiculita húmeda. Sin él el gecko no puede mudar bien y pueden quedarle restos de piel en los dedos que corten la circulación.</p>
+  </div>
+
+  <h2>Alimentación</h2>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-icon">🦗</div><div class="food-name">Grillos</div><div class="food-freq">Base de la dieta</div><p>La opción más completa nutricionalmente. Deben estar bien alimentados antes de dárselos al gecko (gut loading).</p></div>
+    <div class="food-card"><div class="food-icon">🪱</div><div class="food-name">Tenebrios</div><div class="food-freq">2-3 veces/semana</div><p>Muy aceptados por los geckos. Altos en grasa — úsalos como complemento, no como base.</p></div>
+    <div class="food-card"><div class="food-icon">🐛</div><div class="food-name">Dubia / lobster roach</div><div class="food-freq">Alternativa a grillos</div><p>Excelente valor nutricional. No saltan ni huelen. Cada vez más populares como alimento principal.</p></div>
+    <div class="food-card"><div class="food-icon">🐝</div><div class="food-name">Supergusanos</div><div class="food-freq">Ocasional / premio</div><p>Solo para adultos y con moderación. Muy grasos. Buenos como premio para geckos que rechazan otros insectos.</p></div>
+  </div>
+
+  <div class="tip-box"><p>💡 <strong>Suplementación:</strong> Espolvorea los insectos con calcio sin vitamina D3 en cada toma, y con calcio con D3 una vez a la semana. Sin calcio suficiente los geckos desarrollan enfermedad metabólica ósea — una de las enfermedades más comunes y evitables.</p></div>
+
+  <div class="summary-box">
+    <h3>Resumen de cuidados del gecko leopardo</h3>
+    <ul class="summary-list">
+      <li>Terrario de al menos 60x40x40 cm, horizontal</li>
+      <li>Gradiente de temperatura: 28-32°C zona caliente, 22-26°C zona fría</li>
+      <li>Sustrato seguro: papel de cocina, baldosas o alfombra de reptil</li>
+      <li>Tres escondites: zona caliente, zona fría y húmedo para la muda</li>
+      <li>Alimentación con insectos vivos, nunca muertos ni congelados</li>
+      <li>Suplementar con calcio en cada toma y vitaminas una vez por semana</li>
+    </ul>
+  </div>
+  <a class="cta-link" href="#">→ Los mejores reptiles para principiantes: cuál elegir</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía completa del pez betta: cuidados, tanque y alimentación</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #1a1a2a; background: #f7f7fb; }
+
+  .hero {
+    background: linear-gradient(135deg, #2d0a4a 0%, #6a1a8a 50%, #3a0a6a 100%);
+    color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-tag {
+    display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+    color: #dda8f0; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
+  }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(26px, 5vw, 46px); font-weight: 600; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .intro { font-family: 'Lora', serif; font-size: 19px; line-height: 1.75; color: #2a2a3a; border-left: 4px solid #6a1a8a; padding-left: 24px; margin-bottom: 40px; }
+
+  p { margin-bottom: 18px; color: #2a2a3a; }
+
+  h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #2d0a4a; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #d8c8ea; }
+
+  .specs-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 24px 0;
+  }
+  .spec-card { background: white; border: 1px solid #d8c8ea; border-radius: 12px; padding: 16px; text-align: center; }
+  .spec-icon { font-size: 26px; margin-bottom: 6px; }
+  .spec-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #8a5aaa; margin-bottom: 4px; }
+  .spec-value { font-size: 15px; font-weight: 600; color: #2d0a4a; }
+
+  .info-box { background: white; border: 1px solid #d8c8ea; border-left: 5px solid #6a1a8a; border-radius: 0 12px 12px 0; padding: 24px; margin: 24px 0; }
+  .info-box h3 { font-family: 'Lora', serif; font-size: 19px; color: #2d0a4a; margin-bottom: 10px; }
+  .info-box p { font-size: 15px; margin-bottom: 10px; }
+
+  .tip-box { background: #fff8e6; border: 1px solid #f0d080; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; align-items: flex-start; }
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box { background: #fff5f5; border: 1px solid #f0a8a8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; align-items: flex-start; }
+  .warning-box p { margin: 0; font-size: 15px; color: #6b1a1a; }
+
+  .compat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .compat-card { background: white; border-radius: 12px; padding: 18px; }
+  .compat-card.yes { border: 1px solid #a8e0c8; }
+  .compat-card.no { border: 1px solid #f0a8a8; }
+  .compat-title { font-weight: 600; font-size: 14px; margin-bottom: 10px; }
+  .compat-card.yes .compat-title { color: #0a4a2a; }
+  .compat-card.no .compat-title { color: #6b1a1a; }
+  .compat-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .compat-list li { font-size: 13px; color: #2a3a2a; display: flex; align-items: center; gap: 8px; }
+  .compat-list li::before { font-size: 14px; flex-shrink: 0; }
+  .compat-card.yes .compat-list li::before { content: '✓'; color: #0a6a3a; }
+  .compat-card.no .compat-list li::before { content: '✗'; color: #8a1a1a; }
+
+  .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 20px 0; }
+  .food-card { background: white; border: 1px solid #d8c8ea; border-radius: 10px; padding: 16px; }
+  .food-icon { font-size: 24px; margin-bottom: 6px; }
+  .food-name { font-weight: 600; font-size: 14px; color: #2d0a4a; margin-bottom: 4px; }
+  .food-desc { font-size: 12px; color: #6a5a7a; line-height: 1.5; }
+  .food-rating { margin-top: 8px; font-size: 12px; color: #8a5aaa; font-weight: 600; }
+
+  .disease-item { border-bottom: 1px solid #d8c8ea; padding: 18px 0; }
+  .disease-item:last-child { border-bottom: none; }
+  .disease-name { font-weight: 600; font-size: 16px; color: #2d0a4a; margin-bottom: 6px; }
+  .disease-item p { font-size: 15px; margin: 0; }
+
+  .summary-box { background: #2d0a4a; color: white; border-radius: 16px; padding: 36px; margin: 48px 0 32px; }
+  .summary-box h3 { font-family: 'Lora', serif; font-size: 22px; color: #dda8f0; margin-bottom: 20px; }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); }
+  .summary-list li::before { content: '✓'; background: #6a1a8a; color: #dda8f0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .cta-link { display: block; text-align: center; background: #6a1a8a; color: white; text-decoration: none; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; margin-top: 32px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .compat-grid { grid-template-columns: 1fr; }
+    .summary-box { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Guía de especie</div>
+  <h1>Guía completa del pez betta: cuidados, tanque y alimentación</h1>
+  <p class="hero-sub">Todo lo que necesitas saber para tener un betta sano, activo y con los colores al máximo.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">El pez betta es probablemente el pez de acuario más vendido del mundo, y con razón: sus colores son espectaculares, su personalidad es única y sus cuidados son relativamente sencillos. Pero "sencillos" no significa "sin requisitos". Muchos bettas viven en condiciones muy por debajo de lo que necesitan.</p>
+
+  <p>Esta guía te explica todo lo que necesita un betta para vivir bien de verdad.</p>
+
+  <h2>Ficha técnica del betta</h2>
+
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-icon">📏</div>
+      <div class="spec-label">Tamaño adulto</div>
+      <div class="spec-value">5-7 cm</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⏳</div>
+      <div class="spec-label">Esperanza de vida</div>
+      <div class="spec-value">2-5 años</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🌡️</div>
+      <div class="spec-label">Temperatura</div>
+      <div class="spec-value">24-28 °C</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">💧</div>
+      <div class="spec-label">pH</div>
+      <div class="spec-value">6.5 - 7.5</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🐠</div>
+      <div class="spec-label">Tamaño mínimo</div>
+      <div class="spec-value">20-30 litros</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🍖</div>
+      <div class="spec-label">Alimentación</div>
+      <div class="spec-value">Carnívoro</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">👤</div>
+      <div class="spec-label">Sociabilidad</div>
+      <div class="spec-value">Solitario</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⭐</div>
+      <div class="spec-label">Dificultad</div>
+      <div class="spec-value">Principiante</div>
+    </div>
+  </div>
+
+  <h2>El tanque ideal para un betta</h2>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>El mayor mito del betta:</strong> que puede vivir en un vaso, un jarrón o un recipiente pequeño. Es falso. Los bettas en la naturaleza viven en arrozales y estanques — espacios amplios, no recipientes diminutos. Un betta en un vaso es un betta estresado con la vida útil reducida a la mitad.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>Tamaño mínimo recomendado</h3>
+    <p>Lo mínimo para un betta es un acuario de <strong>20 litros</strong>, aunque 30-40 litros es lo ideal. Con más espacio el betta nada más, explora más y muestra mejor sus colores. En acuarios pequeños se aburre y estresa con facilidad.</p>
+    <p>El acuario no necesita ser muy alto — los bettas son peces de superficie que suben a respirar aire directamente (tienen un órgano especial llamado laberinto). Un acuario de 40-50 cm de alto puede cansarlos.</p>
+  </div>
+
+  <div class="info-box">
+    <h3>Equipamiento necesario</h3>
+    <p><strong>Filtro:</strong> Sí, pero con caudal suave. Los bettas tienen aletas largas y las corrientes fuertes los agotan. Un filtro de esponja o un interno con caudal regulable es lo ideal.</p>
+    <p><strong>Calentador:</strong> Imprescindible. Los bettas son tropicales y necesitan entre 24 y 28°C constantes. Por debajo de 22°C su sistema inmune se debilita y enferman con facilidad.</p>
+    <p><strong>Tapa:</strong> Muy importante. Los bettas saltan — y lo hacen más de lo que parece. Un acuario sin tapa es un riesgo real.</p>
+    <p><strong>Plantas y escondites:</strong> Los bettas se sienten seguros con vegetación donde esconderse. Las plantas de hoja ancha como la anubias son perfectas y también les sirven para descansar en superficie.</p>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Truco:</strong> Si ves al betta constantemente en un rincón, pegado al fondo o con las aletas caídas, suele ser señal de que el agua está fría, el filtro tiene demasiada corriente, o el acuario es demasiado pequeño.</p>
+  </div>
+
+  <h2>Compatibilidad: con quién puede vivir un betta</h2>
+
+  <p>El betta macho es territorial con otros bettas y con peces de aletas largas y coloridas que confunde con rivales. Pero en un acuario bien planificado puede convivir con otras especies.</p>
+
+  <div class="compat-grid">
+    <div class="compat-card yes">
+      <div class="compat-title">✓ Compañeros compatibles</div>
+      <ul class="compat-list">
+        <li>Corydoras (van al fondo, pacíficos)</li>
+        <li>Otocinclus (limpiadores, muy tranquilos)</li>
+        <li>Tetras de aletas cortas</li>
+        <li>Caracoles nerita o manzana</li>
+        <li>Gambas amano (con precaución)</li>
+        <li>Rasboras de harlequín</li>
+      </ul>
+    </div>
+    <div class="compat-card no">
+      <div class="compat-title">✗ Incompatibles</div>
+      <ul class="compat-list">
+        <li>Otro betta macho</li>
+        <li>Betta hembra (salvo cría)</li>
+        <li>Peces de cola larga (guppys, etc.)</li>
+        <li>Peces agresivos o que muerdan aletas</li>
+        <li>Barbos de sumatra</li>
+        <li>Cíclidos de cualquier tipo</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Aunque la lista de compatibles sea amplia, siempre observa el comportamiento los primeros días. Cada betta tiene su propio carácter — hay algunos más tolerantes y otros muy territoriales con cualquier compañero.</p>
+  </div>
+
+  <h2>Alimentación del betta</h2>
+
+  <p>El betta es un carnívoro estricto. En la naturaleza come insectos y larvas. Una dieta basada solo en pienso vegetal o de baja calidad debilita su sistema inmune y apaga sus colores. La variedad es clave.</p>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-icon">🥣</div>
+      <div class="food-name">Pellets específicos</div>
+      <div class="food-desc">La base de la dieta. Elige pellets pequeños formulados para bettas con proteína animal como primer ingrediente.</div>
+      <div class="food-rating">⭐⭐⭐⭐⭐ Base diaria</div>
+    </div>
+    <div class="food-card">
+      <div class="food-icon">🦐</div>
+      <div class="food-name">Artemia liofilizada</div>
+      <div class="food-desc">Excelente complemento. Rica en proteína. La mayoría de bettas la acepta con entusiasmo.</div>
+      <div class="food-rating">⭐⭐⭐⭐⭐ 2-3 veces/semana</div>
+    </div>
+    <div class="food-card">
+      <div class="food-icon">🪱</div>
+      <div class="food-name">Gusanos de sangre</div>
+      <div class="food-desc">Los favoritos de casi todos los bettas. Úsalos como premio, no como base — son muy grasos.</div>
+      <div class="food-rating">⭐⭐⭐⭐ 1-2 veces/semana</div>
+    </div>
+    <div class="food-card">
+      <div class="food-icon">🦟</div>
+      <div class="food-name">Dafnia liofilizada</div>
+      <div class="food-desc">Buena para la digestión. Ayuda a prevenir el estreñimiento, que es común en bettas alimentados solo con pellets.</div>
+      <div class="food-rating">⭐⭐⭐⭐ Ocasional</div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>Importante:</strong> El betta tiene el estómago del tamaño de su ojo. Sobrealimentarlo es muy fácil y muy dañino — causa estreñimiento, hinchazón y contamina el agua. Una o dos veces al día, solo lo que coma en 2 minutos. Un día de ayuno a la semana es buena práctica.</p>
+  </div>
+
+  <h2>Enfermedades más comunes</h2>
+
+  <div class="disease-item">
+    <div class="disease-name">Podredumbre de aletas</div>
+    <p>Las aletas aparecen desflecadas o con bordes oscuros. Suele ser bacteriana y se origina por mala calidad del agua. Solución: mejorar los cambios de agua y usar tratamiento antibacteriano específico.</p>
+  </div>
+
+  <div class="disease-item">
+    <div class="disease-name">Punto blanco (Ich)</div>
+    <p>Pequeños puntos blancos en el cuerpo y aletas, como sal. Muy contagioso. Se trata subiendo la temperatura a 28-30°C y usando tratamiento antiparasitario.</p>
+  </div>
+
+  <div class="disease-item">
+    <div class="disease-name">Hinchazón (dropsy)</div>
+    <p>El betta aparece hinchado con las escamas levantadas (efecto piña). Es una señal grave de fallo orgánico. Tiene tratamiento pero el pronóstico suele ser malo si se detecta tarde.</p>
+  </div>
+
+  <div class="disease-item">
+    <div class="disease-name">Estreñimiento</div>
+    <p>El betta no defeca, está apático y tiene el vientre hinchado. Ayuna 2-3 días y luego ofrécele dafnia. Muy frecuente en bettas alimentados solo con pellets.</p>
+  </div>
+
+  <div class="disease-item">
+    <div class="disease-name">Vejiga natatoria</div>
+    <p>El betta nada de lado, flota en superficie o se hunde. Puede tener varias causas: sobrealimentación, infección o defecto congénito. El ayuno y la dafnia suelen ayudar en casos leves.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen de cuidados del betta</h3>
+    <ul class="summary-list">
+      <li>Mínimo 20-30 litros, con calentador y filtro de caudal suave</li>
+      <li>Temperatura entre 24 y 28°C constantes</li>
+      <li>Tapar el acuario — los bettas saltan</li>
+      <li>Nunca con otro betta macho ni peces de aletas largas</li>
+      <li>Dieta variada: pellets + artemia + gusanos de sangre</li>
+      <li>Alimentar poco: estómago del tamaño de su ojo</li>
+      <li>Cambios de agua semanales del 20-30%</li>
+      <li>Plantas y escondites para que se sienta seguro</li>
+    </ul>
+  </div>
+
+  <p>El betta es un pez con una personalidad sorprendente — te reconoce, reacciona cuando te acercas al acuario y puede llegar a comer de tu mano con el tiempo. Si le das las condiciones que necesita, te lo devolverá con creces.</p>
+
+  <a class="cta-link" href="#">→ ¿Con qué peces puede vivir el betta? Guía de compatibilidad completa</a>
+
+</div>
+
+</body>
+</html>

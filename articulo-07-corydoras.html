@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corydoras: cuidados, variantes y con qué peces van bien</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #1a2a1a; background: #f7f9f4; }
+
+  .hero {
+    background: linear-gradient(135deg, #3a2a0a 0%, #7a5a1a 50%, #4a3a0a 100%);
+    color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #f0d8a8; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(26px, 5vw, 46px); font-weight: 600; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+  .intro { font-family: 'Lora', serif; font-size: 19px; line-height: 1.75; color: #2a3a2a; border-left: 4px solid #7a5a1a; padding-left: 24px; margin-bottom: 40px; }
+  p { margin-bottom: 18px; color: #2a3a2a; }
+  h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #3a2a0a; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #e8d8a8; }
+
+  .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 24px 0; }
+  .spec-card { background: white; border: 1px solid #e8d8a8; border-radius: 12px; padding: 16px; text-align: center; }
+  .spec-icon { font-size: 24px; margin-bottom: 6px; }
+  .spec-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #8a6a2a; margin-bottom: 4px; }
+  .spec-value { font-size: 15px; font-weight: 600; color: #3a2a0a; }
+
+  .group-box { background: white; border: 2px solid #7a5a1a; border-radius: 14px; padding: 28px; margin: 28px 0; }
+  .group-box h3 { font-family: 'Lora', serif; font-size: 20px; color: #3a2a0a; margin-bottom: 16px; }
+  .group-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid #e8d8a8; }
+  .group-row:last-child { border-bottom: none; }
+  .group-tank { font-size: 13px; font-weight: 600; color: #7a5a1a; min-width: 120px; }
+  .group-fish { display: flex; gap: 4px; }
+  .fish-dot { font-size: 18px; }
+  .group-label { font-size: 13px; color: #5a4a2a; margin-left: 8px; }
+
+  .variant-card { background: white; border: 1px solid #e8d8a8; border-radius: 14px; padding: 22px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start; }
+  .variant-emoji { font-size: 36px; flex-shrink: 0; }
+  .variant-info { flex: 1; }
+  .variant-name { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: #3a2a0a; margin-bottom: 4px; }
+  .variant-sci { font-size: 12px; color: #8a6a2a; font-style: italic; margin-bottom: 8px; }
+  .variant-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .vtag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+  .vtag-easy { background: #e8f5ee; color: #0a4a2a; }
+  .vtag-size { background: #e8f0fb; color: #0a2a5a; }
+  .vtag-temp { background: #fff8e0; color: #5a3a00; }
+  .vtag-pop { background: #f5e8fb; color: #3a0a5a; }
+  .variant-info p { font-size: 14px; margin: 0; color: #2a3a2a; }
+
+  .experience-box { background: #f0f7ff; border: 1px solid #b8d8f8; border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+  .experience-box::before { content: '✋ Experiencia propia'; display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #1a5a9a; margin-bottom: 8px; }
+  .experience-box p { margin: 0; font-style: italic; font-size: 15px; color: #1a3a5a; }
+
+  .tip-box { background: #fff8e6; border: 1px solid #f0d080; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box { background: #fff5f5; border: 1px solid #f0a8a8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .warning-box p { margin: 0; font-size: 15px; color: #6b1a1a; }
+
+  .compat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .compat-card { background: white; border-radius: 12px; padding: 18px; }
+  .compat-card.yes { border: 1px solid #a8e0c8; }
+  .compat-card.no { border: 1px solid #f0a8a8; }
+  .compat-title { font-weight: 600; font-size: 14px; margin-bottom: 10px; }
+  .compat-card.yes .compat-title { color: #0a4a2a; }
+  .compat-card.no .compat-title { color: #6b1a1a; }
+  .compat-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .compat-list li { font-size: 13px; color: #2a3a2a; display: flex; align-items: center; gap: 8px; }
+  .compat-card.yes .compat-list li::before { content: '✓'; color: #0a6a3a; font-weight: 700; }
+  .compat-card.no .compat-list li::before { content: '✗'; color: #8a1a1a; font-weight: 700; }
+
+  .care-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+  .care-card { background: white; border: 1px solid #e8d8a8; border-radius: 10px; padding: 16px; }
+  .care-icon { font-size: 24px; margin-bottom: 8px; }
+  .care-title { font-weight: 600; font-size: 14px; color: #3a2a0a; margin-bottom: 4px; }
+  .care-desc { font-size: 13px; color: #5a4a2a; line-height: 1.5; }
+
+  .summary-box { background: #3a2a0a; color: white; border-radius: 16px; padding: 36px; margin: 48px 0 32px; }
+  .summary-box h3 { font-family: 'Lora', serif; font-size: 22px; color: #f0d8a8; margin-bottom: 20px; }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-list li { display: flex; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); align-items: flex-start; }
+  .summary-list li::before { content: '✓'; background: #7a5a1a; color: #f0d8a8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .cta-link { display: block; text-align: center; background: #7a5a1a; color: white; text-decoration: none; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; margin-top: 32px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .compat-grid { grid-template-columns: 1fr; }
+    .variant-card { flex-direction: column; gap: 10px; }
+    .summary-box { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Guía de especie</div>
+  <h1>Corydoras: cuidados, variantes y con qué peces van bien</h1>
+  <p class="hero-sub">El pez de fondo más popular en acuarios de agua dulce — y con razón. Guía completa para tenerlos bien.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Los corydoras son de esos peces que una vez los tienes no quieres un acuario sin ellos. Son pacíficos, activos, curiosos, limpian el fondo y se llevan bien con casi todo el mundo. Pero tienen un requisito innegociable: necesitan vivir en grupo, y ese grupo tiene que ser suficientemente grande.</p>
+
+  <h2>Ficha técnica del corydoras</h2>
+
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-icon">📏</div>
+      <div class="spec-label">Tamaño adulto</div>
+      <div class="spec-value">3-7 cm</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⏳</div>
+      <div class="spec-label">Esperanza de vida</div>
+      <div class="spec-value">5-10 años</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🌡️</div>
+      <div class="spec-label">Temperatura</div>
+      <div class="spec-value">22-26 °C</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">💧</div>
+      <div class="spec-label">pH</div>
+      <div class="spec-value">6.0 - 7.5</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🏠</div>
+      <div class="spec-label">Zona del acuario</div>
+      <div class="spec-value">Fondo</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">👥</div>
+      <div class="spec-label">Social</div>
+      <div class="spec-value">Grupo mínimo 6</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🍖</div>
+      <div class="spec-label">Alimentación</div>
+      <div class="spec-value">Omnívoro</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⭐</div>
+      <div class="spec-label">Dificultad</div>
+      <div class="spec-value">Principiante</div>
+    </div>
+  </div>
+
+  <h2>¿Cuántos corydoras necesitas según el tamaño del acuario?</h2>
+
+  <p>Este es el punto más importante y el que más gente se salta. Los corydoras son peces de banco — en la naturaleza viven en grupos de cientos. En cautividad necesitan al menos 6 para sentirse seguros y mostrar su comportamiento natural. Un corydoras solo o en grupo de 2-3 se estresa, se vuelve apático y enferma con más facilidad.</p>
+
+  <div class="group-box">
+    <h3>Número recomendado según el acuario</h3>
+    <div class="group-row">
+      <span class="group-tank">60 litros</span>
+      <div class="group-fish">
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+      </div>
+      <span class="group-label">5-6 corydoras</span>
+    </div>
+    <div class="group-row">
+      <span class="group-tank">100 litros</span>
+      <div class="group-fish">
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+      </div>
+      <span class="group-label">7-8 corydoras</span>
+    </div>
+    <div class="group-row">
+      <span class="group-tank">150-200 litros</span>
+      <div class="group-fish">
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span><span class="fish-dot">🐟</span><span class="fish-dot">🐟</span>
+        <span class="fish-dot">🐟</span>
+      </div>
+      <span class="group-label">hasta 12 corydoras</span>
+    </div>
+  </div>
+
+  <div class="experience-box">
+    <p>Con los corydoras bronce lo comprobé: en un tanque de 60 litros con 5-6 son un espectáculo, siempre moviéndose en grupo por el fondo. Si tienes entre 100 y 200 litros puedes llegar a 12 sin problema. Lo importante es no quedarte corto con el grupo — un corydoras solo es un corydoras triste.</p>
+  </div>
+
+  <h2>Las variantes más populares</h2>
+
+  <div class="variant-card">
+    <div class="variant-emoji">🟤</div>
+    <div class="variant-info">
+      <div class="variant-name">Corydoras bronce</div>
+      <div class="variant-sci">Corydoras aeneus</div>
+      <div class="variant-tags">
+        <span class="vtag vtag-easy">Muy fácil</span>
+        <span class="vtag vtag-size">5-7 cm</span>
+        <span class="vtag vtag-pop">El más común</span>
+      </div>
+      <p>El corydoras más vendido en España y el mejor para empezar. Es resistente, adaptable y activo. Tolera un rango amplio de parámetros de agua y se adapta bien a casi cualquier acuario de agua dulce. Su color bronce cobrizo con reflejos metálicos lo hace muy atractivo bajo la iluminación del acuario.</p>
+    </div>
+  </div>
+
+  <div class="variant-card">
+    <div class="variant-emoji">🐼</div>
+    <div class="variant-info">
+      <div class="variant-name">Corydoras panda</div>
+      <div class="variant-sci">Corydoras panda</div>
+      <div class="variant-tags">
+        <span class="vtag vtag-easy">Fácil</span>
+        <span class="vtag vtag-size">4-5 cm</span>
+        <span class="vtag vtag-temp">Agua más fría: 20-25°C</span>
+      </div>
+      <p>Uno de los más bonitos — blanco con manchas negras que recuerdan a un panda. Algo más delicado que el bronce y prefiere temperaturas un poco más bajas. Muy popular pero requiere más atención a los parámetros del agua.</p>
+    </div>
+  </div>
+
+  <div class="variant-card">
+    <div class="variant-emoji">⭐</div>
+    <div class="variant-info">
+      <div class="variant-name">Corydoras sterbai</div>
+      <div class="variant-sci">Corydoras sterbai</div>
+      <div class="variant-tags">
+        <span class="vtag vtag-easy">Intermedio</span>
+        <span class="vtag vtag-size">6-7 cm</span>
+        <span class="vtag vtag-temp">Tolera hasta 30°C</span>
+      </div>
+      <p>El favorito para acuarios con discus o bettas por su tolerancia a temperaturas más altas. Diseño muy llamativo con puntos blancos sobre fondo oscuro. Algo más caro que el bronce pero muy valorado por su resistencia y aspecto.</p>
+    </div>
+  </div>
+
+  <div class="variant-card">
+    <div class="variant-emoji">🔵</div>
+    <div class="variant-info">
+      <div class="variant-name">Corydoras paleatus</div>
+      <div class="variant-sci">Corydoras paleatus</div>
+      <div class="variant-tags">
+        <span class="vtag vtag-easy">Muy fácil</span>
+        <span class="vtag vtag-size">5-7 cm</span>
+        <span class="vtag vtag-temp">Agua fría: 18-24°C</span>
+      </div>
+      <p>Junto al bronce, el corydoras más resistente y fácil de mantener. Tolera temperaturas más bajas que la mayoría, lo que lo hace compatible con peces de agua fría. Muy activo y sociable.</p>
+    </div>
+  </div>
+
+  <div class="variant-card">
+    <div class="variant-emoji">🐆</div>
+    <div class="variant-info">
+      <div class="variant-name">Corydoras julii</div>
+      <div class="variant-sci">Corydoras julii</div>
+      <div class="variant-tags">
+        <span class="vtag vtag-easy">Fácil</span>
+        <span class="vtag vtag-size">5-6 cm</span>
+        <span class="vtag vtag-pop">Muy buscado</span>
+      </div>
+      <p>Diseño con puntos y rayas que lo hacen uno de los más vistosos. Muy buscado pero a veces confundido con el corydoras trilineatus, que es muy similar. Cuidados sencillos, buen carácter.</p>
+    </div>
+  </div>
+
+  <h2>Cuidados esenciales</h2>
+
+  <div class="care-grid">
+    <div class="care-card">
+      <div class="care-icon">🪨</div>
+      <div class="care-title">Sustrato suave</div>
+      <div class="care-desc">Los corydoras tienen barbillas sensibles que usan para buscar comida. La grava gruesa o con aristas las daña. Usa arena fina o grava redondeada.</div>
+    </div>
+    <div class="care-card">
+      <div class="care-icon">🌿</div>
+      <div class="care-title">Plantas y escondites</div>
+      <div class="care-desc">Se sienten más seguros con vegetación densa y escondites en el fondo. Las raíces y troncos son perfectos para ellos.</div>
+    </div>
+    <div class="care-card">
+      <div class="care-icon">💧</div>
+      <div class="care-title">Agua limpia</div>
+      <div class="care-desc">Son sensibles a la contaminación del agua. Los cambios semanales del 25-30% son imprescindibles. El amoníaco y los nitritos los afectan rápido.</div>
+    </div>
+    <div class="care-card">
+      <div class="care-icon">🍽️</div>
+      <div class="care-title">Pastillas de fondo</div>
+      <div class="care-desc">Necesitan comida que llegue al fondo. Las pastillas o tabletas hundibles son ideales. Complementa con gusanos de sangre liofilizados.</div>
+    </div>
+    <div class="care-card">
+      <div class="care-icon">💡</div>
+      <div class="care-title">Luz moderada</div>
+      <div class="care-desc">Prefieren zonas con algo de sombra. Demasiada luz directa los hace más retraídos. Las plantas flotantes ayudan a crear zonas oscuras.</div>
+    </div>
+    <div class="care-card">
+      <div class="care-icon">🌬️</div>
+      <div class="care-title">Oxigenación</div>
+      <div class="care-desc">Los corydoras suben a la superficie a respirar aire de vez en cuando — es normal. Pero si lo hacen muy frecuentemente puede indicar falta de oxígeno en el agua.</div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>Importante:</strong> Nunca uses sustrato de grava gruesa o con aristas con corydoras. Sus barbillas son muy delicadas y con sustrato inadecuado se dañan, se infectan y pueden morir. Si ves que las barbillas se acortan o desaparecen, es señal de que el sustrato o la calidad del agua no es la adecuada.</p>
+  </div>
+
+  <h2>Compatibilidad: con quién van bien</h2>
+
+  <div class="compat-grid">
+    <div class="compat-card yes">
+      <div class="compat-title">✓ Compatibles</div>
+      <ul class="compat-list">
+        <li>Betta (zona diferente)</li>
+        <li>Tetras de todo tipo</li>
+        <li>Rasboras</li>
+        <li>Guppys</li>
+        <li>Platis y mollys</li>
+        <li>Otocinclus</li>
+        <li>Caracoles y gambas</li>
+        <li>La mayoría de peces pacíficos</li>
+      </ul>
+    </div>
+    <div class="compat-card no">
+      <div class="compat-title">✗ Incompatibles</div>
+      <ul class="compat-list">
+        <li>Cíclidos agresivos</li>
+        <li>Peces grandes depredadores</li>
+        <li>Peces que muerden aletas</li>
+        <li>Pez globo</li>
+        <li>Oscars y cíclidos grandes</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Truco:</strong> Los corydoras son perfectos para la zona de fondo en cualquier acuario comunitario. Mientras el resto de peces ocupa la zona media y la superficie, ellos limpian los restos del fondo y animan el acuario a todas horas.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen de cuidados del corydoras</h3>
+    <ul class="summary-list">
+      <li>Mínimo 6 en un acuario de 60L, hasta 12 en 150-200L</li>
+      <li>Sustrato de arena fina o grava redondeada — nunca gruesa</li>
+      <li>Agua limpia con cambios semanales del 25-30%</li>
+      <li>Alimentar con pastillas hundibles que lleguen al fondo</li>
+      <li>Compatible con casi cualquier pez pacífico</li>
+      <li>Plantas y escondites para que se sientan seguros</li>
+      <li>Si las barbillas se acortan, revisar sustrato y calidad del agua</li>
+    </ul>
+  </div>
+
+  <p>Los corydoras bronce son el punto de entrada perfecto a esta familia — resistentes, activos y fáciles de encontrar en cualquier tienda. Una vez los tengas en grupo verás por qué son uno de los peces más queridos en la acuariofilia.</p>
+
+  <a class="cta-link" href="#">→ Los 10 mejores peces para acuarios pequeños</a>
+
+</div>
+</body>
+</html>

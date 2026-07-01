@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué es el ciclado del acuario y por qué es imprescindible</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #1a2a1a;
+    background: #f7f9f4;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a3a52 0%, #2a6b5a 50%, #0d4a3a 100%);
+    color: white;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #a8f0d8;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #2a3a2a;
+    border-left: 4px solid #2a6b5a;
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  p { margin-bottom: 18px; color: #2a3a2a; }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a3a52;
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c8e8d8;
+  }
+
+  h3 {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    color: #1a3a52;
+    margin: 28px 0 10px;
+  }
+
+  .cycle-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .cycle-step {
+    background: white;
+    border: 2px solid #c8e8d8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 130px;
+    flex: 1;
+    max-width: 160px;
+  }
+
+  .cycle-step .step-icon { font-size: 28px; margin-bottom: 6px; }
+  .cycle-step .step-name { font-weight: 600; font-size: 14px; color: #1a3a52; margin-bottom: 4px; }
+  .cycle-step .step-label { font-size: 12px; color: #5a8a7a; line-height: 1.4; }
+  .cycle-step.danger { border-color: #f0a8a8; background: #fff5f5; }
+  .cycle-step.danger .step-name { color: #6b1a1a; }
+  .cycle-step.warning { border-color: #f0d080; background: #fffbf0; }
+  .cycle-step.warning .step-name { color: #5a3a00; }
+  .cycle-step.safe { border-color: #a8e0c8; background: #f0fbf5; }
+  .cycle-step.safe .step-name { color: #0a4a2a; }
+
+  .cycle-arrow {
+    font-size: 24px;
+    color: #2a6b5a;
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+
+  .phase-box {
+    background: white;
+    border: 1px solid #c8e8d8;
+    border-left: 5px solid #2a6b5a;
+    border-radius: 0 12px 12px 0;
+    padding: 24px 24px 18px;
+    margin: 24px 0;
+  }
+
+  .phase-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2a6b5a;
+    margin-bottom: 6px;
+  }
+
+  .phase-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .phase-box p { font-size: 15px; margin-bottom: 8px; }
+
+  .values-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .value-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .value-pill.high { background: #fff0f0; color: #8b0000; border: 1px solid #f0a8a8; }
+  .value-pill.medium { background: #fff8e0; color: #6b4400; border: 1px solid #f0d080; }
+  .value-pill.low { background: #f0fbf5; color: #0a4a2a; border: 1px solid #a8e0c8; }
+
+  .tip-box {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box {
+    background: #fff5f5;
+    border: 1px solid #f0a8a8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .warning-box p { margin: 0; font-size: 15px; color: #6b1a1a; }
+  .warning-box strong { color: #4a0a0a; }
+
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+
+  .method-card {
+    background: white;
+    border: 1px solid #c8e8d8;
+    border-radius: 10px;
+    padding: 18px;
+  }
+
+  .method-card .method-icon { font-size: 26px; margin-bottom: 8px; }
+  .method-card .method-name { font-weight: 600; font-size: 15px; color: #1a3a52; margin-bottom: 6px; }
+  .method-card p { font-size: 13px; color: #4a6a5a; line-height: 1.5; margin: 0; }
+  .method-card .time-badge {
+    display: inline-block;
+    background: #e8f5ee;
+    color: #0a4a2a;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 8px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #c8e8d8;
+    padding: 18px 0;
+  }
+
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1a3a52;
+    margin-bottom: 8px;
+  }
+
+  .faq-a { font-size: 15px; color: #2a3a2a; margin: 0; }
+
+  .summary-box {
+    background: #1a3a52;
+    color: white;
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    margin: 48px 0 32px;
+  }
+
+  .summary-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #a8f0d8;
+    margin-bottom: 20px;
+  }
+
+  .summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .summary-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .summary-list li::before {
+    content: '✓';
+    background: #2a6b5a;
+    color: #a8f0d8;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cta-link {
+    display: block;
+    text-align: center;
+    background: #2a6b5a;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .summary-box { padding: 28px 22px; }
+    .cycle-diagram { gap: 4px; }
+    .cycle-step { min-width: 80px; padding: 12px 10px; }
+    .cycle-arrow { padding: 0 4px; font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Conceptos clave</div>
+  <h1>Qué es el ciclado del acuario y por qué es imprescindible</h1>
+  <p class="hero-sub">El paso que más gente se salta — y la razón número uno por la que los peces mueren en los primeros días.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Si acabas de montar tu primer acuario y tienes ganas de meter los peces cuanto antes, para. El ciclado es el proceso más importante de toda la acuariofilia, y saltárselo es la causa número uno de peces muertos en acuarios nuevos.</p>
+
+  <p>En este artículo te explico qué es exactamente, cómo funciona, cuánto tarda y cómo acelerarlo de forma segura.</p>
+
+  <h2>El problema: el agua del grifo no es apta para los peces</h2>
+
+  <p>Cuando montas un acuario nuevo y lo llenas de agua (ya tratada con acondicionador para eliminar el cloro), esa agua está "muerta" en términos biológicos. No contiene las bacterias beneficiosas que necesita un acuario para funcionar.</p>
+
+  <p>Los peces producen desechos constantemente. Esos desechos generan <strong>amoníaco</strong>, una sustancia tóxica que en concentraciones bajas estresa a los peces y en concentraciones altas los mata. En un acuario nuevo, sin bacterias que lo procesen, el amoníaco se acumula sin control.</p>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>El peligro invisible:</strong> El agua puede parecer completamente limpia y cristalina mientras está llena de amoníaco. No hay forma de saberlo a simple vista — solo con un test de agua.</p>
+  </div>
+
+  <h2>Qué es el ciclo del nitrógeno</h2>
+
+  <p>El ciclo del nitrógeno es el proceso biológico que convierte el amoníaco tóxico en sustancias menos dañinas mediante bacterias. Es lo que hace que un acuario sea un ecosistema estable y no una pecera que envenena a sus habitantes.</p>
+
+  <div class="cycle-diagram">
+    <div class="cycle-step danger">
+      <div class="step-icon">💀</div>
+      <div class="step-name">Amoníaco (NH₃)</div>
+      <div class="step-label">Muy tóxico. Producido por los desechos.</div>
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-step warning">
+      <div class="step-icon">⚠️</div>
+      <div class="step-name">Nitritos (NO₂)</div>
+      <div class="step-label">Tóxico. Bacterias Nitrosomonas lo producen.</div>
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-step safe">
+      <div class="step-icon">✅</div>
+      <div class="step-name">Nitratos (NO₃)</div>
+      <div class="step-label">Poco tóxico. Se elimina con cambios de agua.</div>
+    </div>
+  </div>
+
+  <p>Las dos bacterias clave son:</p>
+  <p><strong>Nitrosomonas</strong> — convierten el amoníaco en nitritos. Se establecen primero.<br>
+  <strong>Nitrobacter</strong> — convierten los nitritos en nitratos. Llegan después.</p>
+  <p>Ambas viven principalmente en la esponja del filtro, que es por eso que el filtro es el elemento más importante del acuario.</p>
+
+  <h2>Las fases del ciclado</h2>
+
+  <div class="phase-box">
+    <div class="phase-number">Fase 01 — Semana 1-2</div>
+    <h3>Sube el amoníaco</h3>
+    <p>Añades una fuente de amoníaco (comida en descomposición, amoníaco puro sin perfume, o un pez resistente). Las bacterias Nitrosomonas empiezan a colonizar el filtro lentamente.</p>
+    <p>El amoníaco sube. Todavía no hay bacterias suficientes para procesarlo.</p>
+    <div class="values-row">
+      <span class="value-pill high">Amoníaco: alto ↑</span>
+      <span class="value-pill low">Nitritos: 0</span>
+      <span class="value-pill low">Nitratos: 0</span>
+    </div>
+  </div>
+
+  <div class="phase-box">
+    <div class="phase-number">Fase 02 — Semana 2-3</div>
+    <h3>Baja el amoníaco, suben los nitritos</h3>
+    <p>Las Nitrosomonas ya están establecidas y procesan el amoníaco. Empieza a bajar. Pero ahora suben los nitritos, igual de tóxicos. Las Nitrobacter todavía no son suficientes.</p>
+    <div class="values-row">
+      <span class="value-pill medium">Amoníaco: bajando ↓</span>
+      <span class="value-pill high">Nitritos: alto ↑</span>
+      <span class="value-pill low">Nitratos: empezando a subir</span>
+    </div>
+  </div>
+
+  <div class="phase-box">
+    <div class="phase-number">Fase 03 — Semana 3-6</div>
+    <h3>Bajan los nitritos, suben los nitratos</h3>
+    <p>Las Nitrobacter se establecen y procesan los nitritos. Estos bajan. Los nitratos suben — son mucho menos tóxicos y se controlan con los cambios de agua semanales.</p>
+    <div class="values-row">
+      <span class="value-pill low">Amoníaco: 0 ✓</span>
+      <span class="value-pill low">Nitritos: 0 ✓</span>
+      <span class="value-pill medium">Nitratos: presentes (normal)</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>¿Cuándo está listo el acuario?</strong> Cuando el amoníaco y los nitritos marcan 0 en el test de agua y los nitratos están presentes. En ese momento el ciclo está completo y puedes meter los peces.</p>
+  </div>
+
+  <h2>Métodos para ciclar el acuario</h2>
+
+  <div class="method-grid">
+    <div class="method-card">
+      <div class="method-icon">🍽️</div>
+      <div class="method-name">Con comida</div>
+      <p>Echa una pequeña cantidad de comida de peces cada dos días. Al descomponerse genera amoníaco de forma natural. El método más sencillo.</p>
+      <span class="time-badge">4-6 semanas</span>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🧫</div>
+      <div class="method-name">Bacterias en botella</div>
+      <p>Añades bacterias ya cultivadas (Seachem Stability, Tetra SafeStart). Acelera el proceso considerablemente. Combínalo con una fuente de amoníaco.</p>
+      <span class="time-badge">2-3 semanas</span>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🐠</div>
+      <div class="method-name">Esponja de otro acuario</div>
+      <p>Si conoces a alguien con un acuario establecido, pídele un trozo de esponja de filtro. Viene llena de bacterias y acelera mucho el ciclado.</p>
+      <span class="time-badge">1-2 semanas</span>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">⚗️</div>
+      <div class="method-name">Amoníaco puro</div>
+      <p>Amoníaco sin perfume ni detergentes (se vende en droguerías). Permite controlar exactamente cuánto amoníaco añades. Método preciso pero requiere más atención.</p>
+      <span class="time-badge">3-5 semanas</span>
+    </div>
+  </div>
+
+  <h2>Preguntas frecuentes sobre el ciclado</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">¿Puedo meter peces durante el ciclado?</div>
+    <p class="faq-a">En general no se recomienda. Si lo haces, elige especies muy resistentes (como algunas carpas o peces de agua fría), haz cambios de agua frecuentes para mantener el amoníaco bajo, y usa Seachem Prime que desintoxica temporalmente el amoníaco y los nitritos.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">¿Qué pasa si cambio el agua durante el ciclado?</div>
+    <p class="faq-a">Los cambios parciales de agua (20-30%) están bien si el amoníaco o los nitritos suben demasiado. Lo que no debes hacer es cambiar el agua entera, ya que eliminarías las bacterias que estás cultivando en el filtro.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">¿Por qué el amoníaco no baja aunque pasen semanas?</div>
+    <p class="faq-a">Puede que la fuente de amoníaco sea excesiva, que el filtro no esté funcionando bien, o que el agua esté demasiado fría (las bacterias trabajan mejor entre 24-28°C). Revisa que el calentador esté encendido durante el ciclado.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">¿Se puede perder el ciclo una vez establecido?</div>
+    <p class="faq-a">Sí. Las bacterias mueren si limpias el filtro con agua del grifo (el cloro las mata), si el filtro se apaga durante días, o si añades medicamentos que las destruyen. Por eso nunca limpies el filtro con agua del grifo — usa siempre agua del propio acuario.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">¿Necesito ciclar el acuario si uso bacterias en botella?</div>
+    <p class="faq-a">Las bacterias en botella aceleran el proceso pero no lo eliminan del todo. Necesitas seguir midiendo el agua hasta confirmar que el amoníaco y los nitritos están a 0 antes de meter los peces.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen del ciclado</h3>
+    <ul class="summary-list">
+      <li>El ciclado establece las bacterias que hacen el agua segura para los peces</li>
+      <li>Sin bacterias, el amoníaco se acumula y mata a los peces aunque el agua parezca limpia</li>
+      <li>El proceso dura entre 2 y 6 semanas según el método</li>
+      <li>El ciclo está completo cuando amoníaco y nitritos marcan 0 en el test</li>
+      <li>Las bacterias viven en la esponja del filtro — nunca la limpies con agua del grifo</li>
+      <li>Puedes acelerar el proceso con bacterias en botella o esponja de otro acuario</li>
+    </ul>
+  </div>
+
+  <p>El ciclado requiere paciencia, pero es el cimiento de todo. Un acuario bien ciclado es un acuario estable, y un acuario estable es un acuario donde los peces viven bien durante años.</p>
+
+  <a class="cta-link" href="#">→ ¿Qué peces son más fáciles para principiantes? Siguiente artículo</a>
+
+</div>
+
+</body>
+</html>

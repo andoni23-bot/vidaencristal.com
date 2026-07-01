@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo montar tu primer acuario paso a paso</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #1a2a1a;
+    background: #f7f9f4;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0a3d2e 0%, #1a6b4a 50%, #0d5538 100%);
+    color: white;
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #a8f0c6;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .article-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .intro {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #2a3a2a;
+    border-left: 4px solid #1a6b4a;
+    padding-left: 24px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0a3d2e;
+    margin: 48px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d4ead9;
+  }
+
+  p { margin-bottom: 18px; color: #2a3a2a; }
+
+  .step-box {
+    background: white;
+    border: 1px solid #d4ead9;
+    border-left: 5px solid #1a6b4a;
+    border-radius: 0 12px 12px 0;
+    padding: 28px 28px 20px;
+    margin: 32px 0;
+  }
+
+  .step-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a6b4a;
+    margin-bottom: 6px;
+  }
+
+  .step-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #0a3d2e;
+    margin-bottom: 12px;
+  }
+
+  .step-box p { margin-bottom: 10px; font-size: 16px; }
+
+  .tip-box {
+    background: #fff8e6;
+    border: 1px solid #f0d080;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 28px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .tip-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .experience-box {
+    background: #f0f7ff;
+    border: 1px solid #b8d8f8;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 28px 0;
+    font-style: italic;
+  }
+
+  .experience-box::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    color: #4a90d9;
+    line-height: 1;
+    display: block;
+    margin-bottom: -8px;
+  }
+
+  .experience-box p { margin: 0; color: #1a3a5a; font-size: 16px; }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 24px 0 32px;
+  }
+
+  .gear-item {
+    background: white;
+    border: 1px solid #d4ead9;
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+
+  .gear-item .gear-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #0a3d2e;
+    margin-bottom: 4px;
+  }
+
+  .gear-item .gear-desc {
+    font-size: 13px;
+    color: #5a7a5a;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .summary-box {
+    background: #0a3d2e;
+    color: white;
+    border-radius: 16px;
+    padding: 36px 36px 32px;
+    margin: 48px 0 32px;
+  }
+
+  .summary-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    color: #a8f0c6;
+    margin-bottom: 20px;
+  }
+
+  .summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .summary-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .summary-list li::before {
+    content: '✓';
+    background: #1a6b4a;
+    color: #a8f0c6;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cta-link {
+    display: block;
+    text-align: center;
+    background: #1a6b4a;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 32px;
+    transition: background 0.2s;
+  }
+
+  .cta-link:hover { background: #0a3d2e; }
+
+  .maint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .maint-item {
+    background: white;
+    border: 1px solid #d4ead9;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .maint-item .maint-icon { font-size: 28px; margin-bottom: 8px; }
+  .maint-item .maint-label { font-size: 13px; font-weight: 600; color: #0a3d2e; margin-bottom: 4px; }
+  .maint-item .maint-desc { font-size: 12px; color: #5a7a5a; line-height: 1.4; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .summary-box { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Guía para principiantes</div>
+  <h1>Cómo montar tu primer acuario paso a paso (y no morir en el intento)</h1>
+  <p class="hero-sub">Todo lo que necesitas saber antes de meter el primer pez — y los errores que debes evitar.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Montar un acuario por primera vez parece sencillo: compras el tanque, lo llenas de agua, metes los peces y listo. Ojalá fuera así. La realidad es que la mayoría de principiantes comete errores evitables que acaban con los peces muertos en los primeros días.</p>
+
+  <p>En esta guía te explico exactamente cómo hacerlo bien, en orden y sin tecnicismos innecesarios.</p>
+
+  <h2>Lo que necesitas antes de empezar</h2>
+
+  <p>Antes de comprar nada, ten claro que un acuario no es solo un tanque con agua — es un ecosistema vivo que necesita equilibrio. Estos son los materiales básicos:</p>
+
+  <div class="gear-grid">
+    <div class="gear-item">
+      <div class="gear-name">🐠 Acuario</div>
+      <p class="gear-desc">Entre 60 y 100 litros para empezar. Los pequeños parecen más fáciles pero son más inestables.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">💧 Filtro</div>
+      <p class="gear-desc">Imprescindible. Limpia el agua y alberga las bacterias beneficiosas.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">🌡️ Calentador</div>
+      <p class="gear-desc">La mayoría de peces tropicales necesitan entre 24 y 26 °C.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">🪨 Sustrato</div>
+      <p class="gear-desc">Grava o arena del fondo. Ayuda a que las bacterias colonicen el acuario.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">💡 Iluminación</div>
+      <p class="gear-desc">Necesaria si quieres plantas. Recomendable en cualquier caso.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">🧪 Acondicionador</div>
+      <p class="gear-desc">El agua del grifo tiene cloro. Este producto lo elimina en segundos.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">📊 Test de agua</div>
+      <p class="gear-desc">Para medir amoníaco, nitritos, nitratos y pH. Fundamental al principio.</p>
+    </div>
+    <div class="gear-item">
+      <div class="gear-name">🌡️ Termómetro</div>
+      <p class="gear-desc">Para controlar que el calentador funciona correctamente.</p>
+    </div>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 01</div>
+    <h3>Elige bien el lugar</h3>
+    <p>Un acuario de 100 litros pesa alrededor de 120-130 kg con todo dentro. Asegúrate de que el mueble o soporte lo aguanta.</p>
+    <p>Evita ponerlo cerca de ventanas con luz solar directa — favorece la aparición de algas — y lejos de radiadores o corrientes de aire frío.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 02</div>
+    <h3>Lava el sustrato y decora</h3>
+    <p>Antes de meter la grava o arena, lávala bien con agua corriente hasta que salga limpia. El polvo de fábrica puede enturbiar el agua durante días.</p>
+    <p>Si usas madera natural, asegúrate de que sea apta para acuario — algunas maderas sueltan sustancias que alteran el pH.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 03</div>
+    <h3>Instala el filtro y el calentador</h3>
+    <p>El calentador debe quedar sumergido en una zona donde el agua circule bien, para que caliente de manera uniforme.</p>
+    <p><strong>No los enciendas todavía.</strong> Espera a tener el acuario lleno de agua.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 04</div>
+    <h3>Llena el acuario y trata el agua</h3>
+    <p>Para no remover el sustrato al llenar, coloca un plato en el fondo y vierte el agua sobre él despacio.</p>
+    <p>Una vez lleno, añade el acondicionador de agua según la dosis indicada. Después, ya puedes encender el filtro, el calentador y la iluminación.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 05 — El más importante</div>
+    <h3>El ciclado del acuario</h3>
+    <p>Aquí es donde la mayoría de principiantes falla. Las bacterias beneficiosas del filtro convierten el amoníaco tóxico (producido por los peces) en sustancias menos dañinas. Sin ellas, el agua se envenena aunque parezca limpia.</p>
+    <p>El ciclado tarda entre 4 y 6 semanas. Puedes acelerarlo añadiendo bacterias en botella o pidiendo al vendedor sustrato de un acuario ya establecido.</p>
+    <p>El ciclo habrá terminado cuando el amoníaco y los nitritos marquen 0 en el test.</p>
+  </div>
+
+  <div class="tip-box">
+    <div class="tip-icon">💡</div>
+    <p><strong>Consejo:</strong> Muchos principiantes saltan el ciclado por impaciencia. Es el error número uno. Cuatro semanas de espera evitan semanas de problemas y peces muertos.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 06</div>
+    <h3>Elige bien los peces</h3>
+    <p>Una vez el acuario está ciclado, es tentador ir a la tienda y comprar todo lo que te gusta. Antes de hacerlo, investiga compatibilidad, temperatura, pH y tamaño adulto de cada especie.</p>
+    <p>Empieza con pocos peces — puedes añadir más con el tiempo — y elige especies resistentes y tranquilas.</p>
+  </div>
+
+  <div class="experience-box">
+    <p>Cometí el error de meter peces incompatibles — algunos agresivos con otros tranquilos — y el resultado fue estrés, peleas y bajas. Investiga antes de comprar, siempre.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 07</div>
+    <h3>Las plantas — cuidado con esto</h3>
+    <p>Las plantas oxigenan el agua, reducen nitratos y crean refugios para los peces. Pero no todas benefician a todos los peces: algunas alteran el pH, y hay peces que necesitan parámetros muy específicos.</p>
+    <p>Para empezar, apuesta por plantas fáciles sin CO2: <strong>java fern, anubias, musgo de java o vallisneria</strong>. Son resistentes y no darán problemas.</p>
+  </div>
+
+  <div class="experience-box">
+    <p>También me ha pasado que algunas plantas no benefician a ciertos peces. Antes de añadir una planta nueva, asegúrate de que es compatible con los habitantes de tu acuario.</p>
+  </div>
+
+  <h2>Mantenimiento semanal básico</h2>
+
+  <div class="maint-grid">
+    <div class="maint-item">
+      <div class="maint-icon">💧</div>
+      <div class="maint-label">Cambio de agua</div>
+      <div class="maint-desc">20-30% del volumen cada semana. Siempre con acondicionador.</div>
+    </div>
+    <div class="maint-item">
+      <div class="maint-icon">🧹</div>
+      <div class="maint-label">Sifón del fondo</div>
+      <div class="maint-desc">Retira restos de comida y desechos del sustrato.</div>
+    </div>
+    <div class="maint-item">
+      <div class="maint-icon">🔧</div>
+      <div class="maint-label">Revisar filtro</div>
+      <div class="maint-desc">Limpiarlo con agua del propio acuario, nunca del grifo.</div>
+    </div>
+    <div class="maint-item">
+      <div class="maint-icon">🧪</div>
+      <div class="maint-label">Test de agua</div>
+      <div class="maint-desc">Al menos una vez por semana al principio.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen rápido</h3>
+    <ul class="summary-list">
+      <li>Elige un acuario de al menos 60 litros</li>
+      <li>Instala filtro, calentador e iluminación antes de llenarlo</li>
+      <li>Trata siempre el agua con acondicionador antes de añadirla</li>
+      <li>Cicla el acuario 4-6 semanas antes de meter peces</li>
+      <li>Elige peces compatibles entre sí y con tus plantas</li>
+      <li>Mantén cambios de agua semanales del 20-30%</li>
+    </ul>
+  </div>
+
+  <p>Si sigues este proceso, tienes muchas más probabilidades de éxito que el 80% de personas que montan su primer acuario. La paciencia en el ciclado es lo que marca la diferencia.</p>
+
+  <a class="cta-link" href="#">→ ¿Qué peces elegir para empezar? Lee el siguiente artículo</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punto blanco en peces: qué es, causas y tratamiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a2a1a;background:#f4f9f4}
+  .hero{background:linear-gradient(135deg,#3a0a0a 0%,#7a1a1a 50%,#4a0a0a 100%);color:white;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#f8a8a8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:700px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:#1a2a1a;border-left:4px solid #7a1a1a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a3a2a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#3a0a0a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #e8b8b8}
+  .info-box{background:white;border:1px solid #e8b8b8;border-left:5px solid #7a1a1a;border-radius:0 12px 12px 0;padding:24px;margin:24px 0}
+  .info-box h3{font-family:'Lora',serif;font-size:19px;color:#3a0a0a;margin-bottom:10px}
+  .info-box p{font-size:15px;margin-bottom:8px}
+  .symptoms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+  .symptom-card{background:white;border:1px solid #e8b8b8;border-radius:10px;padding:16px;text-align:center}
+  .symptom-icon{font-size:26px;margin-bottom:6px}
+  .symptom-name{font-weight:600;font-size:14px;color:#3a0a0a;margin-bottom:4px}
+  .symptom-desc{font-size:12px;color:#7a4a4a;line-height:1.5}
+  .treatment-step{background:white;border:1px solid #e8b8b8;border-radius:12px;padding:20px 24px;margin:14px 0;display:flex;gap:16px;align-items:flex-start}
+  .step-num{background:#7a1a1a;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px}
+  .step-content h3{font-family:'Lora',serif;font-size:17px;color:#3a0a0a;margin-bottom:6px}
+  .step-content p{font-size:15px;margin:0}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .tip-box strong{color:#3a2d00}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .faq-item{border-bottom:1px solid #e8b8b8;padding:18px 0}
+  .faq-item:last-child{border-bottom:none}
+  .faq-q{font-weight:600;font-size:16px;color:#3a0a0a;margin-bottom:8px}
+  .faq-a{font-size:15px;color:#2a3a2a;margin:0}
+  .summary-box{background:#3a0a0a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#f8a8a8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85);align-items:flex-start}
+  .summary-list li::before{content:'✓';background:#7a1a1a;color:#f8a8a8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#7a1a1a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.treatment-step{flex-direction:column;gap:10px}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag">Enfermedades</div>
+  <h1>Punto blanco en peces: qué es, causas y tratamiento</h1>
+  <p class="hero-sub">La enfermedad más común en acuarios de agua dulce — y cómo eliminarla antes de que se extienda a todo el acuario.</p>
+</div>
+<div class="article-wrap">
+  <p class="intro">El punto blanco o ich es la enfermedad más frecuente en acuarios de agua dulce. Si tienes peces el tiempo suficiente, tarde o temprano te vas a encontrar con ella. La buena noticia: detectada a tiempo, tiene tratamiento sencillo y efectivo.</p>
+
+  <h2>Qué es el punto blanco (Ich)</h2>
+  <div class="info-box">
+    <h3>El parásito Ichthyophthirius multifiliis</h3>
+    <p>El punto blanco es causado por un parásito llamado Ichthyophthirius multifiliis — Ich para abreviar. Es un protozoo que se adhiere a la piel, aletas y branquias de los peces y se reproduce en el acuario si las condiciones lo permiten.</p>
+    <p>Los puntitos blancos que ves en el pez son en realidad quistes del parásito bajo la piel del pez. Cuando maduran, caen al fondo del acuario, se reproducen y las nuevas larvas buscan otro huésped. El ciclo completo dura entre 3 y 7 días dependiendo de la temperatura.</p>
+  </div>
+
+  <h2>Síntomas: cómo reconocerlo</h2>
+  <div class="symptoms-grid">
+    <div class="symptom-card"><div class="symptom-icon">⚪</div><div class="symptom-name">Puntos blancos</div><div class="symptom-desc">Pequeños puntos blancos en cuerpo, aletas y cabeza. Como granos de sal o sémola.</div></div>
+    <div class="symptom-card"><div class="symptom-icon">🔄</div><div class="symptom-name">Rascado</div><div class="symptom-desc">El pez se frota contra rocas, decoración y el sustrato intentando quitarse el parásito.</div></div>
+    <div class="symptom-card"><div class="symptom-icon">😔</div><div class="symptom-name">Letargo</div><div class="symptom-desc">El pez nada menos, está más quieto de lo normal y pierde el apetito.</div></div>
+    <div class="symptom-card"><div class="symptom-icon">🫁</div><div class="symptom-name">Branquias afectadas</div><div class="symptom-desc">Respiración acelerada o en superficie si las branquias están muy afectadas.</div></div>
+    <div class="symptom-card"><div class="symptom-icon">🏳️</div><div class="symptom-name">Aletas pegadas</div><div class="symptom-desc">Las aletas aparecen pegadas al cuerpo en lugar de extendidas con normalidad.</div></div>
+    <div class="symptom-card"><div class="symptom-icon">🎯</div><div class="symptom-name">Muy contagioso</div><div class="symptom-desc">Si un pez lo tiene, el resto del acuario está expuesto. Actúa rápido.</div></div>
+  </div>
+
+  <div class="warning-box"><p>⚠️ <strong>Importante:</strong> El ich es muy contagioso. En cuanto detectes un pez con síntomas, trata TODO el acuario — no solo el pez afectado. Las larvas del parásito ya están en el agua aunque no se vean.</p></div>
+
+  <h2>Tratamiento paso a paso</h2>
+
+  <div class="treatment-step">
+    <div class="step-num">1</div>
+    <div class="step-content"><h3>Sube la temperatura a 28-30°C</h3><p>El parásito no tolera bien el calor. Subir la temperatura acelera su ciclo de vida y lo hace más vulnerable al tratamiento. Sube la temperatura gradualmente (1-2°C al día) para no estresar a los peces. Algunos peces sensibles como los bettas aguantan bien 28-29°C.</p></div>
+  </div>
+
+  <div class="treatment-step">
+    <div class="step-num">2</div>
+    <div class="step-content"><h3>Aumenta la aireación</h3><p>El agua caliente tiene menos oxígeno disuelto. Añade una piedra difusora o aumenta el caudal del filtro para compensar. Los peces ya están estresados por el parásito — necesitan el máximo oxígeno disponible.</p></div>
+  </div>
+
+  <div class="treatment-step">
+    <div class="step-num">3</div>
+    <div class="step-content"><h3>Aplica tratamiento antiparasitario</h3><p>Usa un medicamento específico para ich. Los más comunes en España son JBL Punktol, Tetra ContraIck o Sera costapur. Sigue exactamente la dosis del fabricante. Retira el carbón activo del filtro antes de tratar — lo absorbe y anula el medicamento.</p></div>
+  </div>
+
+  <div class="treatment-step">
+    <div class="step-num">4</div>
+    <div class="step-content"><h3>Haz cambios de agua durante el tratamiento</h3><p>Cambia el 25-30% del agua cada 2 días y añade la dosis correspondiente de medicamento al agua nueva. Los cambios ayudan a retirar las larvas del parásito del fondo antes de que encuentren un nuevo huésped.</p></div>
+  </div>
+
+  <div class="treatment-step">
+    <div class="step-num">5</div>
+    <div class="step-content"><h3>Continúa el tratamiento al menos 7-10 días</h3><p>Aunque los puntos blancos desaparezcan visualmente en 2-3 días, el parásito sigue en el agua en fase libre. Interrumpir el tratamiento antes de tiempo es la causa más común de recaída. Completa siempre el ciclo completo.</p></div>
+  </div>
+
+  <div class="tip-box"><p>💡 <strong>Tratamiento natural alternativo:</strong> Algunos acuaristas tratan el ich solo con temperatura alta (30°C) durante 10-14 días sin medicamento. Funciona en casos leves pero es más lento y requiere más atención. Si el ich está muy extendido, usa medicamento.</p></div>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">¿De dónde viene el ich si el acuario está cerrado?</div>
+    <p class="faq-a">El parásito entra al acuario con peces nuevos, plantas, decoración o agua de otra pecera. Por eso es importante hacer cuarentena a los peces nuevos antes de meterlos en el acuario principal — al menos 2 semanas en un acuario aparte.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">¿El ich puede matar a los peces?</div>
+    <p class="faq-a">Sí, si no se trata. En infecciones graves las branquias se ven tan afectadas que el pez no puede respirar. Detectado pronto y tratado correctamente, la tasa de recuperación es muy alta.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">¿Puedo tratar solo el pez afectado en otro recipiente?</div>
+    <p class="faq-a">No tiene sentido — el parásito ya está en el agua del acuario principal. Aunque separes el pez afectado, los demás están expuestos. Trata siempre el acuario completo.</p>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">¿El ich afecta a los invertebrados?</div>
+    <p class="faq-a">El parásito en sí no ataca a gambas ni caracoles, pero muchos medicamentos para ich sí son tóxicos para los invertebrados. Si tienes gambas o caracoles en el acuario, busca un tratamiento específico sin cobre o usa solo el método de temperatura alta.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen del tratamiento</h3>
+    <ul class="summary-list">
+      <li>Detecta los puntos blancos cuanto antes — cada día cuenta</li>
+      <li>Trata todo el acuario, no solo el pez afectado</li>
+      <li>Sube temperatura a 28-30°C gradualmente</li>
+      <li>Retira carbón activo del filtro antes de medicamentar</li>
+      <li>Completa el tratamiento 7-10 días aunque mejore antes</li>
+      <li>Haz cuarentena a los peces nuevos para evitar futuros contagios</li>
+    </ul>
+  </div>
+  <a class="cta-link" href="#">→ Por qué se mueren mis peces recién comprados</a>
+</div>
+</body>
+</html>

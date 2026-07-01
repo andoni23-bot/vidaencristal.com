@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peces compatibles con betta: cuáles sí y cuáles no</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #1a1a2a; background: #f7f7fb; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a3a2a 0%, #1a7a5a 50%, #0a4a3a 100%);
+    color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #a8f0c8; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(26px, 5vw, 46px); font-weight: 600; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+  .intro { font-family: 'Lora', serif; font-size: 19px; line-height: 1.75; color: #2a3a2a; border-left: 4px solid #1a7a5a; padding-left: 24px; margin-bottom: 40px; }
+  p { margin-bottom: 18px; color: #2a3a2a; }
+  h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #0a3a2a; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #c8e8d8; }
+
+  .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 24px 0; }
+  .rule-card { background: white; border: 1px solid #c8e8d8; border-radius: 12px; padding: 16px; text-align: center; }
+  .rule-icon { font-size: 26px; margin-bottom: 8px; }
+  .rule-title { font-weight: 600; font-size: 14px; color: #0a3a2a; margin-bottom: 4px; }
+  .rule-desc { font-size: 12px; color: #4a7a5a; line-height: 1.5; }
+
+  .fish-card { background: white; border: 1px solid #c8e8d8; border-radius: 14px; padding: 22px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start; }
+  .fish-card.incompatible { border-color: #f0a8a8; }
+  .fish-emoji { font-size: 36px; flex-shrink: 0; }
+  .fish-info { flex: 1; }
+  .fish-name { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: #0a3a2a; margin-bottom: 4px; }
+  .fish-card.incompatible .fish-name { color: #4a0a0a; }
+  .fish-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .fish-tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+  .tag-level { background: #e8f5ee; color: #0a4a2a; }
+  .tag-size { background: #e8f0fb; color: #0a2a5a; }
+  .tag-zone { background: #f5eef8; color: #3a0a5a; }
+  .tag-caution { background: #fff8e0; color: #5a3a00; }
+  .tag-danger { background: #fff0f0; color: #6a0a0a; }
+  .fish-info p { font-size: 14px; margin-bottom: 6px; color: #2a3a2a; }
+
+  .experience-box { background: #f0f7ff; border: 1px solid #b8d8f8; border-radius: 12px; padding: 20px 24px; margin: 28px 0; }
+  .experience-box::before { content: '✋ Experiencia propia'; display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #1a5a9a; margin-bottom: 8px; }
+  .experience-box p { margin: 0; font-style: italic; font-size: 15px; color: #1a3a5a; }
+
+  .tip-box { background: #fff8e6; border: 1px solid #f0d080; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box { background: #fff5f5; border: 1px solid #f0a8a8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .warning-box p { margin: 0; font-size: 15px; color: #6b1a1a; }
+
+  .checklist-box { background: #0a3a2a; color: white; border-radius: 16px; padding: 32px; margin: 40px 0; }
+  .checklist-box h3 { font-family: 'Lora', serif; font-size: 20px; color: #a8f0c8; margin-bottom: 16px; }
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .checklist li { display: flex; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); align-items: flex-start; }
+  .checklist li::before { content: '?'; background: #1a7a5a; color: #a8f0c8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .summary-box { background: #0a3a2a; color: white; border-radius: 16px; padding: 36px; margin: 48px 0 32px; }
+  .summary-box h3 { font-family: 'Lora', serif; font-size: 22px; color: #a8f0c8; margin-bottom: 20px; }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-list li { display: flex; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); align-items: flex-start; }
+  .summary-list li::before { content: '✓'; background: #1a7a5a; color: #a8f0c8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .cta-link { display: block; text-align: center; background: #1a7a5a; color: white; text-decoration: none; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; margin-top: 32px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .fish-card { flex-direction: column; gap: 10px; }
+    .summary-box, .checklist-box { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Compatibilidad</div>
+  <h1>Peces compatibles con betta: cuáles sí y cuáles no</h1>
+  <p class="hero-sub">Una guía completa para saber con quién puede convivir tu betta sin peleas, estrés ni bajas.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">El betta tiene fama de pez agresivo e imposible de combinar con otros. La realidad es más matizada: un betta bien elegido, en un acuario suficientemente grande y con los compañeros correctos, puede convivir sin problemas. La clave está en saber qué buscar.</p>
+
+  <h2>Las reglas de oro antes de elegir compañeros</h2>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-icon">🚫</div>
+      <div class="rule-title">Nada de aletas largas</div>
+      <div class="rule-desc">El betta confunde los peces de aletas vistosas con otros bettas y los ataca.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🎨</div>
+      <div class="rule-title">Evita colores llamativos</div>
+      <div class="rule-desc">Peces muy coloridos o que se parezcan visualmente al betta pueden provocar agresividad.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">📐</div>
+      <div class="rule-title">Acuario grande</div>
+      <div class="rule-desc">Mínimo 60 litros para convivencia. Con más espacio hay menos conflictos territoriales.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🌿</div>
+      <div class="rule-title">Plantas y refugios</div>
+      <div class="rule-desc">Los escondites reducen el estrés de todos los habitantes y limitan los enfrentamientos.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">👀</div>
+      <div class="rule-title">Observa los primeros días</div>
+      <div class="rule-desc">Aunque la especie sea compatible, cada betta es diferente. Vigila el comportamiento al principio.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-icon">🏠</div>
+      <div class="rule-title">Introduce al betta último</div>
+      <div class="rule-desc">Si el betta entra al acuario cuando ya hay otros peces, se siente menos territorial.</div>
+    </div>
+  </div>
+
+  <h2>Peces compatibles con el betta ✅</h2>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🐟</div>
+    <div class="fish-info">
+      <div class="fish-name">Corydoras</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Principiante</span>
+        <span class="fish-tag tag-zone">Fondo</span>
+        <span class="fish-tag tag-size">3-7 cm</span>
+      </div>
+      <p>Una de las mejores opciones. Los corydoras viven en el fondo y el betta en la superficie y zona media, así que prácticamente no se cruzan. Son pacíficos, van en grupo de al menos 6, y ayudan a limpiar restos del fondo. Necesitan los mismos parámetros de agua que el betta.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🐠</div>
+    <div class="fish-info">
+      <div class="fish-name">Otocinclus</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Principiante</span>
+        <span class="fish-tag tag-zone">Fondo / cristales</span>
+        <span class="fish-tag tag-size">4-5 cm</span>
+      </div>
+      <p>Pequeños limpiadores de algas que pasan la vida pegados al cristal y a las plantas. Son totalmente inofensivos y el betta los ignora por completo. Necesitan ir en grupos de al menos 4-6 y requieren algas o verduras como complemento alimenticio.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🐡</div>
+    <div class="fish-info">
+      <div class="fish-name">Rasboras de harlequín</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Principiante</span>
+        <span class="fish-tag tag-zone">Zona media</span>
+        <span class="fish-tag tag-size">4-5 cm</span>
+        <span class="fish-tag tag-caution">Observar primeros días</span>
+      </div>
+      <p>Peces pequeños, tranquilos y de colores discretos que suelen llevarse bien con el betta. Van en grupo de 6 o más. Comparten los mismos requisitos de temperatura y pH. Suelen funcionar bien, aunque siempre hay que observar el comportamiento inicial.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🐚</div>
+    <div class="fish-info">
+      <div class="fish-name">Caracoles nerita y manzana</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Principiante</span>
+        <span class="fish-tag tag-zone">Fondo / cristales</span>
+      </div>
+      <p>Los caracoles son compañeros casi perfectos para el betta. Limpian algas, no molestan y el betta generalmente los ignora. Los nerita son los más recomendados porque no se reproducen en agua dulce (los manzana sí, y pueden multiplicarse mucho).</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🦐</div>
+    <div class="fish-info">
+      <div class="fish-name">Gambas amano</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Intermedio</span>
+        <span class="fish-tag tag-zone">Fondo</span>
+        <span class="fish-tag tag-caution">Depende del betta</span>
+      </div>
+      <p>Las gambas amano son limpiadoras excelentes y suelen ser demasiado grandes para que el betta las cace. Sin embargo, algunos bettas más agresivos las persiguen igualmente. Si el acuario tiene muchas plantas y escondites, las probabilidades de éxito aumentan mucho.</p>
+    </div>
+  </div>
+
+  <div class="fish-card">
+    <div class="fish-emoji">🐟</div>
+    <div class="fish-info">
+      <div class="fish-name">Tetras de aletas cortas (neón, cardenal)</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-level">Principiante</span>
+        <span class="fish-tag tag-zone">Zona media</span>
+        <span class="fish-tag tag-size">3-4 cm</span>
+        <span class="fish-tag tag-caution">Acuario grande recomendado</span>
+      </div>
+      <p>Los tetras neón y cardenal pueden funcionar con bettas tranquilos en acuarios de al menos 60 litros con abundante vegetación. El riesgo es que son pequeños y coloridos, lo que puede atraer la atención de bettas más activos. En grupos de 8-10 se sienten más seguros.</p>
+    </div>
+  </div>
+
+  <h2>Peces incompatibles con el betta ❌</h2>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🐟</div>
+    <div class="fish-info">
+      <div class="fish-name">Otro betta macho</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible total</span>
+      </div>
+      <p>Dos bettas machos en el mismo acuario siempre termina en pelea. Son extremadamente territoriales entre sí y uno de los dos acabará herido o muerto. Sin excepción.</p>
+    </div>
+  </div>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🐠</div>
+    <div class="fish-info">
+      <div class="fish-name">Guppys y peces de cola larga</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible</span>
+      </div>
+      <p>Los guppys macho tienen aletas largas y coloridas que el betta confunde con un rival. El resultado suele ser el betta mordiendo las aletas del guppy constantemente. Los guppys hembra son algo más seguros, pero tampoco es una combinación recomendada.</p>
+    </div>
+  </div>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🐟</div>
+    <div class="fish-info">
+      <div class="fish-name">Barbos de sumatra</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible</span>
+      </div>
+      <p>Los barbos de sumatra son conocidos por morder aletas, y las aletas largas del betta son un objetivo irresistible para ellos. Aunque el betta sea el agresor habitual, en este caso puede ser la víctima.</p>
+    </div>
+  </div>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🔪</div>
+    <div class="fish-info">
+      <div class="fish-name">Pez cuchillo negro</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible</span>
+        <span class="fish-tag tag-caution">Especie especial</span>
+      </div>
+      <p>El pez cuchillo negro es una especie fascinante y poco común que merece mención especial. Son peces territoriales, nocturnos y que necesitan acuarios grandes (mínimo 200 litros de adulto). Aunque no son agresivos por naturaleza con peces pequeños, su tamaño adulto (hasta 50 cm), su territorialidad y sus necesidades tan diferentes a las del betta hacen que esta combinación sea completamente incompatible.</p>
+    </div>
+  </div>
+
+  <div class="experience-box">
+    <p>Tengo peces cuchillo y son uno de los animales más interesantes que he tenido en acuario — pero son peces para acuarios grandes y específicos, no para compartir espacio con un betta. Sus necesidades son completamente distintas: agua más oscura, escondites grandes, espacio para nadar de noche. Mezclarlos sería un error para ambos.</p>
+  </div>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🐡</div>
+    <div class="fish-info">
+      <div class="fish-name">Cíclidos de cualquier tipo</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible</span>
+      </div>
+      <p>Los cíclidos son en su mayoría agresivos y territoriales. Un betta frente a un cíclido tiene todas las de perder — incluso las especies más pequeñas de cíclidos pueden intimidar, estresar o atacar al betta.</p>
+    </div>
+  </div>
+
+  <div class="fish-card incompatible">
+    <div class="fish-emoji">🐟</div>
+    <div class="fish-info">
+      <div class="fish-name">Gouramis</div>
+      <div class="fish-tags">
+        <span class="fish-tag tag-danger">Incompatible</span>
+      </div>
+      <p>Los gouramis son parientes del betta y comparten el mismo órgano laberinto. El betta los reconoce como competidores y la convivencia suele terminar en conflicto, especialmente con gouramis macho.</p>
+    </div>
+  </div>
+
+  <div class="checklist-box">
+    <h3>Antes de añadir un compañero al betta, pregúntate:</h3>
+    <ul class="checklist">
+      <li>¿El acuario tiene al menos 60 litros?</li>
+      <li>¿Hay suficientes plantas y escondites para todos?</li>
+      <li>¿El pez que quiero añadir tiene aletas cortas y colores discretos?</li>
+      <li>¿Vive en una zona diferente del acuario (fondo, medio)?</li>
+      <li>¿Necesita los mismos parámetros de agua que el betta?</li>
+      <li>¿Estoy dispuesto a separarlo si no funciona?</li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Plan B siempre listo:</strong> Antes de hacer cualquier combinación nueva, ten preparado un acuario de reserva o un separador. Si el betta o los nuevos peces muestran agresividad sostenida en los primeros días, sepáralos sin dudar.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen rápido</h3>
+    <ul class="summary-list">
+      <li>Sí: corydoras, otocinclus, rasboras, caracoles, gambas amano</li>
+      <li>No: otros bettas, guppys, barbos de sumatra, cíclidos, gouramis</li>
+      <li>Nunca con peces de aletas largas o muy coloridos</li>
+      <li>Acuario mínimo de 60 litros para convivencia</li>
+      <li>Introduce al betta el último</li>
+      <li>Observa los primeros días y ten siempre un plan B</li>
+    </ul>
+  </div>
+
+  <a class="cta-link" href="#">→ Guía completa de los corydoras: cuidados y compatibilidad</a>
+
+</div>
+</body>
+</html>

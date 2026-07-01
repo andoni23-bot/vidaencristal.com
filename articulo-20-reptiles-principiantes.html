@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los mejores reptiles para principiantes: cuál elegir como primera mascota</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a2a1a;background:#f4f9f4}
+  .hero{background:linear-gradient(135deg,#0a2a0a 0%,#1a5a2a 50%,#0a3a1a 100%);color:white;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#a8f0a8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:700px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:#1a2a1a;border-left:4px solid #1a5a2a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a3a2a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#0a2a0a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #b0e0b0}
+  .reptile-card{background:white;border:1px solid #b0e0b0;border-radius:14px;padding:24px;margin:20px 0;position:relative}
+  .rep-num{position:absolute;top:-14px;left:20px;background:#1a5a2a;color:white;font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px}
+  .rep-header{display:flex;gap:14px;align-items:flex-start;margin:8px 0 12px}
+  .rep-emoji{font-size:34px;flex-shrink:0}
+  .rep-name{font-family:'Lora',serif;font-size:19px;font-weight:600;color:#0a2a0a;margin-bottom:2px}
+  .rep-sci{font-size:12px;color:#4a8a4a;font-style:italic}
+  .rtags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .rtag{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px}
+  .rtag-easy{background:#e8f5ee;color:#0a4a2a}
+  .rtag-size{background:#e8f0fb;color:#0a2a5a}
+  .rtag-terr{background:#fff8e0;color:#5a3a00}
+  .rtag-humid{background:#e0f8f0;color:#0a3a2a}
+  .rtag-star{background:#fff0e0;color:#6a2a00}
+  .reptile-card p{font-size:15px;margin-bottom:10px}
+  .specs-mini{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+  .spec-mini{background:#f0f8f0;border:1px solid #b0e0b0;border-radius:8px;padding:5px 10px;font-size:12px;color:#0a2a0a;font-weight:500}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .tip-box strong{color:#3a2d00}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .table-wrap{overflow-x:auto;margin:28px 0}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{background:#0a2a0a;color:white;padding:10px 14px;text-align:left;font-weight:500;font-size:12px}
+  th:first-child{border-radius:8px 0 0 0}th:last-child{border-radius:0 8px 0 0}
+  td{padding:9px 14px;border-bottom:1px solid #c8e0c8;color:#2a3a2a}
+  tr:nth-child(even) td{background:#f4fbf4}
+  tr:last-child td{border-bottom:none}
+  .summary-box{background:#0a2a0a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#a8f0a8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85);align-items:flex-start}
+  .summary-list li::before{content:'✓';background:#1a5a2a;color:#a8f0a8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#1a5a2a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.rep-header{flex-direction:column;gap:8px}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag">Guía de compra</div>
+  <h1>Los mejores reptiles para principiantes: cuál elegir como primera mascota</h1>
+  <p class="hero-sub">No todos los reptiles son igual de fáciles. Esta guía te ayuda a elegir el que mejor encaja con tu experiencia, espacio y estilo de vida.</p>
+</div>
+<div class="article-wrap">
+  <p class="intro">Los reptiles son mascotas fascinantes pero exigentes. Antes de elegir uno es fundamental informarse bien — sus necesidades son muy específicas y un error de configuración puede afectar gravemente su salud. Dicho esto, hay especies que perdonan más los errores de principiante y son perfectas para empezar.</p>
+
+  <h2>Los mejores reptiles para empezar</h2>
+
+  <div class="reptile-card">
+    <span class="rep-num">01 — El mejor para empezar</span>
+    <div class="rep-header"><div class="rep-emoji">🦎</div><div><div class="rep-name">Gecko leopardo</div><div class="rep-sci">Eublepharis macularius</div></div></div>
+    <div class="rtags"><span class="rtag rtag-easy">Muy fácil</span><span class="rtag rtag-terr">Terrario seco</span><span class="rtag rtag-star">⭐ Más recomendado</span></div>
+    <p>El reptil de iniciación por excelencia. Dócil, de tamaño manejable, no necesita iluminación UV y sus cuidados son relativamente sencillos. Reconoce a su dueño con el tiempo y tolera bien el manejo. Puede vivir 15-20 años con los cuidados correctos.</p>
+    <div class="specs-mini"><span class="spec-mini">20-28 cm adulto</span><span class="spec-mini">Terrario 60x40 cm</span><span class="spec-mini">Insectívoro</span><span class="spec-mini">Nocturno</span></div>
+  </div>
+
+  <div class="reptile-card">
+    <span class="rep-num">02</span>
+    <div class="rep-header"><div class="rep-emoji">🐊</div><div><div class="rep-name">Dragón barbudo</div><div class="rep-sci">Pogona vitticeps</div></div></div>
+    <div class="rtags"><span class="rtag rtag-easy">Fácil-intermedio</span><span class="rtag rtag-terr">Terrario seco</span><span class="rtag rtag-star">⭐ Muy dócil</span></div>
+    <p>El dragón barbudo es considerado el "perro de los reptiles" por su carácter amigable y activo. Es diurno, lo que lo hace más entretenido de observar. Necesita iluminación UV y una zona de basking a alta temperatura, lo que lo hace algo más exigente en equipamiento que el gecko leopardo.</p>
+    <div class="specs-mini"><span class="spec-mini">40-60 cm adulto</span><span class="spec-mini">Terrario 120x60 cm</span><span class="spec-mini">Omnívoro</span><span class="spec-mini">Diurno</span></div>
+  </div>
+
+  <div class="reptile-card">
+    <span class="rep-num">03</span>
+    <div class="rep-header"><div class="rep-emoji">🌿</div><div><div class="rep-name">Gecko crestado</div><div class="rep-sci">Correlophus ciliatus</div></div></div>
+    <div class="rtags"><span class="rtag rtag-easy">Fácil</span><span class="rtag rtag-humid">Terrario húmedo</span></div>
+    <p>Pequeño, arborícola y con una dieta muy sencilla basada en papilla de frutas comercial. No necesita insectos si no quieres manejarlos. Activo al amanecer y al anochecer. Tolera temperaturas ambiente sin calefacción adicional en la mayoría de hogares españoles.</p>
+    <div class="specs-mini"><span class="spec-mini">15-20 cm adulto</span><span class="spec-mini">Terrario vertical 45x45x60 cm</span><span class="spec-mini">Frugívoro-insectívoro</span></div>
+  </div>
+
+  <div class="reptile-card">
+    <span class="rep-num">04</span>
+    <div class="rep-header"><div class="rep-emoji">🐍</div><div><div class="rep-name">Pitón bola</div><div class="rep-sci">Python regius</div></div></div>
+    <div class="rtags"><span class="rtag rtag-easy">Intermedio</span><span class="rtag rtag-humid">Terrario húmedo</span></div>
+    <p>La serpiente más popular como mascota. Dócil, de tamaño manejable para una pitón (90-150 cm adulta), y con una personalidad tranquila. Come ratones congelados una vez a la semana o cada dos semanas. El mayor reto es la humedad alta que necesita y que a veces rechaza comer por semanas sin motivo aparente.</p>
+    <div class="specs-mini"><span class="spec-mini">90-150 cm adulta</span><span class="spec-mini">Terrario 120x60 cm</span><span class="spec-mini">Carnívora (roedores)</span><span class="spec-mini">Nocturna</span></div>
+  </div>
+
+  <div class="reptile-card">
+    <span class="rep-num">05</span>
+    <div class="rep-header"><div class="rep-emoji">🐢</div><div><div class="rep-name">Tortuga mediterránea</div><div class="rep-sci">Testudo hermanni / graeca</div></div></div>
+    <div class="rtags"><span class="rtag rtag-easy">Fácil</span><span class="rtag rtag-terr">Terrario seco / exterior</span></div>
+    <p>La tortuga mediterránea es robusta, longeva y puede vivir en exterior en España durante los meses cálidos. Dieta basada en verduras y hierba fresca. Necesita hibernar en invierno, lo que requiere algo de preparación, pero en general es una de las mascotas más fáciles de mantener.</p>
+    <div class="specs-mini"><span class="spec-mini">15-25 cm adulta</span><span class="spec-mini">Exterior o terrario grande</span><span class="spec-mini">Herbívora</span><span class="spec-mini">Diurna</span></div>
+  </div>
+
+  <div class="warning-box"><p>⚠️ <strong>Evita para empezar:</strong> camaleones (muy delicados), iguanas verdes (crecen mucho y son agresivas de adultas), monitores (grandes y potencialmente peligrosos) y cualquier serpiente venenosa.</p></div>
+
+  <h2>Comparativa rápida</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Reptil</th><th>Dificultad</th><th>Tamaño</th><th>Presupuesto setup</th><th>Dieta</th></tr></thead>
+      <tbody>
+        <tr><td>Gecko leopardo</td><td>Muy fácil</td><td>Pequeño</td><td>€€</td><td>Insectos</td></tr>
+        <tr><td>Dragón barbudo</td><td>Intermedio</td><td>Mediano</td><td>€€€</td><td>Omnívoro</td></tr>
+        <tr><td>Gecko crestado</td><td>Fácil</td><td>Pequeño</td><td>€€</td><td>Papilla + insectos</td></tr>
+        <tr><td>Pitón bola</td><td>Intermedio</td><td>Mediano</td><td>€€€</td><td>Roedores</td></tr>
+        <tr><td>Tortuga mediterránea</td><td>Fácil</td><td>Pequeño-mediano</td><td>€€</td><td>Vegetales</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip-box"><p>💡 <strong>Consejo final:</strong> Antes de comprar cualquier reptil, monta el terrario completo y déjalo estabilizado durante al menos una semana. Verifica temperaturas y humedad con termómetro e higrómetro. Un terrario estable antes de que llegue el animal marca la diferencia entre un comienzo tranquilo y una semana de estrés.</p></div>
+
+  <div class="summary-box">
+    <h3>El reptil ideal según tu situación</h3>
+    <ul class="summary-list">
+      <li>Primera mascota, quieres algo fácil: gecko leopardo</li>
+      <li>Quieres un reptil activo y diurno: dragón barbudo</li>
+      <li>No quieres manejar insectos: gecko crestado</li>
+      <li>Te gustan las serpientes: pitón bola</li>
+      <li>Tienes jardín o terraza: tortuga mediterránea</li>
+    </ul>
+  </div>
+  <a class="cta-link" href="#">→ Volver al inicio del blog</a>
+</div>
+</body>
+</html>

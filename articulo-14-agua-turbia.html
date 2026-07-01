@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué el agua de mi acuario está turbia y cómo solucionarlo</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a2a1a;background:#f4f9f4}
+  .hero{background:linear-gradient(135deg,#0a2a3a 0%,#1a5a7a 50%,#0a3a5a 100%);color:white;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#a8d8f8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:700px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;color:#1a2a1a;border-left:4px solid #1a5a7a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a3a2a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#0a2a3a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #b0d8e8}
+  .cause-card{background:white;border:1px solid #b0d8e8;border-radius:14px;padding:24px;margin:20px 0;position:relative}
+  .cause-color{position:absolute;top:0;left:0;width:6px;height:100%;border-radius:14px 0 0 14px}
+  .color-white{background:#c8d8e0}.color-green{background:#2a7a2a}.color-brown{background:#7a5a1a}.color-grey{background:#5a6a7a}
+  .cause-inner{padding-left:16px}
+  .cause-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .cause-icon{font-size:28px}
+  .cause-name{font-family:'Lora',serif;font-size:19px;font-weight:600;color:#0a2a3a}
+  .cause-badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px}
+  .badge-common{background:#fff0e0;color:#6a2a00}
+  .badge-new{background:#e8f5ee;color:#0a4a2a}
+  .badge-algae{background:#e8f8e0;color:#1a5a0a}
+  .cause-card p{font-size:15px;margin-bottom:10px}
+  .solution-box{background:#f0f8e8;border:1px solid #b8e0a8;border-radius:10px;padding:14px 16px;margin-top:10px}
+  .solution-title{font-size:12px;font-weight:700;color:#0a4a2a;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+  .solution-box p{margin:0;font-size:14px;color:#1a3a1a}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .tip-box strong{color:#3a2d00}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:12px}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .summary-box{background:#0a2a3a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#a8d8f8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85);align-items:flex-start}
+  .summary-list li::before{content:'✓';background:#1a5a7a;color:#a8d8f8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#1a5a7a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-tag">Solución de problemas</div>
+  <h1>Por qué el agua de mi acuario está turbia y cómo solucionarlo</h1>
+  <p class="hero-sub">El color del agua te dice exactamente qué está pasando — y cómo arreglarlo.</p>
+</div>
+<div class="article-wrap">
+  <p class="intro">El agua turbia es uno de los problemas más frecuentes en acuariofilia y también uno de los más fáciles de solucionar si sabes identificar la causa. El truco está en el color: el agua blanca, verde, marrón o grisácea tienen causas completamente diferentes y soluciones distintas.</p>
+
+  <h2>Agua blanca o lechosa</h2>
+
+  <div class="cause-card">
+    <div class="cause-color color-white"></div>
+    <div class="cause-inner">
+      <div class="cause-header"><div class="cause-icon">🥛</div><div><div class="cause-name">Explosión bacteriana (bloom)</div><span class="cause-badge badge-new">Muy común en acuarios nuevos</span></div></div>
+      <p>La causa más frecuente de agua blanca es una explosión de bacterias heterótrofas durante el ciclado. Es completamente normal y no es peligrosa para los peces — es señal de que el acuario está vivo y las bacterias están colonizando el filtro. Suele aparecer entre el día 3 y la semana 2 de un acuario nuevo.</p>
+      <div class="solution-box"><div class="solution-title">✅ Solución</div><p>Paciencia. En la mayoría de casos se resuelve sola en 3-7 días. No hagas cambios de agua masivos — interferirías con el ciclado. Asegúrate de que el filtro esté funcionando correctamente.</p></div>
+    </div>
+  </div>
+
+  <div class="cause-card">
+    <div class="cause-color color-white"></div>
+    <div class="cause-inner">
+      <div class="cause-header"><div class="cause-icon">🧂</div><div><div class="cause-name">Sustrato o arena sin lavar</div><span class="cause-badge badge-common">Error común</span></div></div>
+      <p>La arena y la grava nueva llevan polvo de fábrica que enturbia el agua durante días o semanas. También puede pasar con arena de cantera o materiales no específicos para acuario que no se han lavado correctamente.</p>
+      <div class="solution-box"><div class="solution-title">✅ Solución</div><p>Cambios parciales de agua del 20-30% cada día hasta que aclare. Para futuras ocasiones: lava siempre el sustrato con agua corriente hasta que salga completamente limpia antes de meterlo.</p></div>
+    </div>
+  </div>
+
+  <h2>Agua verde</h2>
+
+  <div class="cause-card">
+    <div class="cause-color color-green"></div>
+    <div class="cause-inner">
+      <div class="cause-header"><div class="cause-icon">🟢</div><div><div class="cause-name">Algas unicelulares en suspensión</div><span class="cause-badge badge-algae">Problema de luz y nutrientes</span></div></div>
+      <p>El agua verde es causada por microalgas que crecen en suspensión en el agua. Las causas principales son demasiadas horas de luz directa, exceso de nutrientes (sobrealimentación, materia orgánica en descomposición) o luz solar directa sobre el acuario.</p>
+      <div class="solution-box"><div class="solution-title">✅ Solución</div><p>Reduce las horas de luz a 6-8 al día. Aleja el acuario de ventanas con luz directa. Haz cambios de agua del 30% cada 2-3 días. Un filtro UV esterilizador elimina las algas en suspensión en pocos días si el problema es persistente.</p></div>
+    </div>
+  </div>
+
+  <h2>Agua marrón o amarillenta</h2>
+
+  <div class="cause-card">
+    <div class="cause-color color-brown"></div>
+    <div class="cause-inner">
+      <div class="cause-header"><div class="cause-icon">🟤</div><div><div class="cause-name">Taninos de madera o turba</div><span class="cause-badge badge-common">Muy frecuente</span></div></div>
+      <p>Los taninos son sustancias naturales que sueltan la madera y la turba al agua. Tiñen el agua de marrón o amarillo — similar al té. No son tóxicos y de hecho algunos peces como los bettas o los tetras los prefieren, pero estéticamente puede no gustar.</p>
+      <div class="solution-box"><div class="solution-title">✅ Solución</div><p>Hierve la madera durante al menos una hora antes de meterla y déjala en remojo varios días cambiando el agua. Si ya está en el acuario, cambios de agua frecuentes y carbón activo en el filtro aclaran el agua en días.</p></div>
+    </div>
+  </div>
+
+  <h2>Agua grisácea o sucia</h2>
+
+  <div class="cause-card">
+    <div class="cause-color color-grey"></div>
+    <div class="cause-inner">
+      <div class="cause-header"><div class="cause-icon">⚫</div><div><div class="cause-name">Materia orgánica en suspensión</div><span class="cause-badge badge-common">Falta de mantenimiento</span></div></div>
+      <p>Restos de comida, heces y materia orgánica en descomposición que flotan en el agua. Suele indicar sobrealimentación, filtro insuficiente o falta de cambios de agua. Es el tipo de turbidez más peligroso porque va acompañado de niveles altos de amoníaco.</p>
+      <div class="solution-box"><div class="solution-title">✅ Solución</div><p>Cambio de agua del 30-40% inmediato. Sifona el fondo para retirar los restos. Reduce la alimentación. Revisa que el filtro funciona bien y tiene suficiente caudal para el tamaño del acuario.</p></div>
+    </div>
+  </div>
+
+  <div class="tip-box"><p>💡 <strong>Regla básica:</strong> Antes de actuar, identifica el color. Agua blanca en acuario nuevo → paciencia. Agua verde → problema de luz. Agua marrón → taninos de madera. Agua grisácea → materia orgánica y falta de mantenimiento.</p></div>
+  <div class="warning-box"><p>⚠️ Si el agua está turbia y los peces respiran en superficie, nadan de lado o tienen comportamientos extraños, mide el amoníaco inmediatamente. El agua turbia grisácea con peces estresados es una emergencia.</p></div>
+
+  <div class="summary-box">
+    <h3>Diagnóstico rápido por color</h3>
+    <ul class="summary-list">
+      <li>Blanca en acuario nuevo → bloom bacteriano, es normal, paciencia</li>
+      <li>Blanca con sustrato nuevo → arena sin lavar, cambios de agua diarios</li>
+      <li>Verde → exceso de luz o nutrientes, reduce horas de iluminación</li>
+      <li>Marrón/amarilla → taninos de madera, carbón activo y cambios de agua</li>
+      <li>Grisácea → materia orgánica, cambio de agua urgente y revisar filtro</li>
+    </ul>
+  </div>
+  <a class="cta-link" href="#">→ Punto blanco en peces: qué es, causas y tratamiento</a>
+</div>
+</body>
+</html>

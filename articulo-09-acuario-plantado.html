@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo montar un acuario plantado para principiantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.8; color: #1a2a1a; background: #f4f9f4; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a3a0a 0%, #2a7a2a 50%, #0a4a1a 100%);
+    color: white; padding: 80px 24px 60px; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #a8f0a8; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
+  .hero h1 { font-family: 'Lora', serif; font-size: clamp(26px, 5vw, 46px); font-weight: 600; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  .article-wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+  .intro { font-family: 'Lora', serif; font-size: 19px; line-height: 1.75; color: #1a2a1a; border-left: 4px solid #2a7a2a; padding-left: 24px; margin-bottom: 40px; }
+  p { margin-bottom: 18px; color: #2a3a2a; }
+  h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; color: #0a3a0a; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid #b8e0b8; }
+
+  .substrate-diagram { background: white; border: 1px solid #b8e0b8; border-radius: 14px; overflow: hidden; margin: 28px 0; }
+  .substrate-layer { padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+  .substrate-layer:not(:last-child) { border-bottom: 1px dashed #b8e0b8; }
+  .layer-icon { font-size: 28px; flex-shrink: 0; width: 40px; text-align: center; }
+  .layer-info { flex: 1; }
+  .layer-name { font-weight: 600; font-size: 15px; color: #0a3a0a; margin-bottom: 2px; }
+  .layer-desc { font-size: 13px; color: #4a7a4a; line-height: 1.5; }
+  .layer-depth { font-size: 12px; font-weight: 600; color: #2a7a2a; margin-top: 4px; }
+  .layer-1 { background: #f0f8f0; }
+  .layer-2 { background: #e8f4e8; }
+  .layer-3 { background: #dff0df; }
+
+  .step-box { background: white; border: 1px solid #b8e0b8; border-left: 5px solid #2a7a2a; border-radius: 0 12px 12px 0; padding: 24px; margin: 24px 0; }
+  .step-number { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #2a7a2a; margin-bottom: 6px; }
+  .step-box h3 { font-family: 'Lora', serif; font-size: 19px; color: #0a3a0a; margin-bottom: 10px; }
+  .step-box p { font-size: 15px; margin-bottom: 8px; }
+
+  .plant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 20px 0; }
+  .plant-card { background: white; border: 1px solid #b8e0b8; border-radius: 10px; padding: 16px; }
+  .plant-icon { font-size: 26px; margin-bottom: 6px; }
+  .plant-name { font-weight: 600; font-size: 14px; color: #0a3a0a; margin-bottom: 4px; }
+  .plant-sci { font-size: 11px; color: #5a8a5a; font-style: italic; margin-bottom: 8px; }
+  .plant-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .ptag { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 20px; }
+  .ptag-easy { background: #e8f5ee; color: #0a4a2a; }
+  .ptag-noco2 { background: #e8f0fb; color: #0a2a5a; }
+  .ptag-low { background: #fff8e0; color: #5a3a00; }
+  .ptag-med { background: #ffeee0; color: #6a2a00; }
+  .plant-card p { font-size: 12px; color: #4a6a4a; margin: 0; line-height: 1.5; }
+
+  .co2-box { background: #f0f8ff; border: 1px solid #a8d0f0; border-radius: 14px; padding: 28px; margin: 28px 0; }
+  .co2-box h3 { font-family: 'Lora', serif; font-size: 20px; color: #0a2a4a; margin-bottom: 14px; }
+  .co2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .co2-card { background: white; border-radius: 10px; padding: 16px; }
+  .co2-card.noco2 { border: 1px solid #b8e0b8; }
+  .co2-card.withco2 { border: 1px solid #a8d0f0; }
+  .co2-card-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .co2-card.noco2 .co2-card-title { color: #0a3a0a; }
+  .co2-card.withco2 .co2-card-title { color: #0a2a4a; }
+  .co2-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .co2-list li { font-size: 13px; color: #2a3a2a; display: flex; gap: 8px; align-items: flex-start; }
+  .co2-list li::before { content: '•'; font-weight: 700; flex-shrink: 0; }
+  .co2-card.noco2 .co2-list li::before { color: #2a7a2a; }
+  .co2-card.withco2 .co2-list li::before { color: #1a5a8a; }
+
+  .experience-box { background: #f0f7ff; border: 1px solid #b8d8f8; border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .experience-box::before { content: '✋ Experiencia propia'; display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #1a5a9a; margin-bottom: 8px; }
+  .experience-box p { margin: 0; font-style: italic; font-size: 15px; color: #1a3a5a; }
+
+  .tip-box { background: #fff8e6; border: 1px solid #f0d080; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .tip-box p { margin: 0; font-size: 15px; color: #5a4500; }
+  .tip-box strong { color: #3a2d00; }
+
+  .warning-box { background: #fff5f5; border: 1px solid #f0a8a8; border-radius: 12px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 12px; }
+  .warning-box p { margin: 0; font-size: 15px; color: #6b1a1a; }
+
+  .maint-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0; }
+  .maint-card { background: white; border: 1px solid #b8e0b8; border-radius: 10px; padding: 16px; text-align: center; }
+  .maint-icon { font-size: 26px; margin-bottom: 8px; }
+  .maint-title { font-weight: 600; font-size: 13px; color: #0a3a0a; margin-bottom: 4px; }
+  .maint-desc { font-size: 12px; color: #4a7a4a; line-height: 1.5; }
+
+  .summary-box { background: #0a3a0a; color: white; border-radius: 16px; padding: 36px; margin: 48px 0 32px; }
+  .summary-box h3 { font-family: 'Lora', serif; font-size: 22px; color: #a8f0a8; margin-bottom: 20px; }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .summary-list li { display: flex; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); align-items: flex-start; }
+  .summary-list li::before { content: '✓'; background: #2a7a2a; color: #a8f0a8; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+  .cta-link { display: block; text-align: center; background: #2a7a2a; color: white; text-decoration: none; padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; margin-top: 32px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 48px; }
+    .article-wrap { padding: 32px 18px 60px; }
+    .co2-grid { grid-template-columns: 1fr; }
+    .summary-box { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">Guía completa</div>
+  <h1>Cómo montar un acuario plantado para principiantes</h1>
+  <p class="hero-sub">Sustrato, plantas, iluminación y CO2 — todo lo que necesitas saber para montar un plantado que funcione de verdad.</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="intro">Un acuario plantado es uno de los proyectos más gratificantes de la acuariofilia. Sustrato nutritivo en el fondo, arena fina encima, plantas enraizadas, rocas y troncos cuidadosamente colocados... el resultado es un ecosistema vivo que mejora con el tiempo. Pero hay que montarlo bien desde el principio.</p>
+
+  <h2>¿Qué es exactamente un acuario plantado?</h2>
+
+  <p>Un acuario plantado es un acuario de agua dulce donde las plantas vivas son el elemento central, no solo decoración. Las plantas cumplen funciones importantes: absorben nitratos, oxigenan el agua, crean refugios para los peces y compiten con las algas reduciendo su aparición.</p>
+
+  <p>No es solo meter plantas en un acuario normal. Requiere un sustrato adecuado, iluminación suficiente y, según las plantas que elijas, CO2 añadido y fertilizantes.</p>
+
+  <h2>El sustrato: la base de todo</h2>
+
+  <p>La estructura del sustrato en un acuario plantado es lo primero que hay que planificar. No es una sola capa — es un sistema de capas con funciones diferentes:</p>
+
+  <div class="substrate-diagram">
+    <div class="substrate-layer layer-1">
+      <div class="layer-icon">🌿</div>
+      <div class="layer-info">
+        <div class="layer-name">Capa superior — Arena fina decorativa</div>
+        <div class="layer-desc">Arena de acuario fina y clara. Estética, fácil de limpiar con sifón y permite ver bien el fondo. Las raíces de las plantas la atraviesan para llegar al sustrato nutritivo.</div>
+        <div class="layer-depth">Grosor: 2-3 cm</div>
+      </div>
+    </div>
+    <div class="substrate-layer layer-2">
+      <div class="layer-icon">🪨</div>
+      <div class="layer-info">
+        <div class="layer-name">Capa intermedia — Sustrato nutritivo</div>
+        <div class="layer-desc">El corazón del plantado. Sustrato específico para acuario con nutrientes que alimentan las raíces. JBL Manado, ADA Amazonia o Tropica son los más usados.</div>
+        <div class="layer-depth">Grosor: 4-6 cm</div>
+      </div>
+    </div>
+    <div class="substrate-layer layer-3">
+      <div class="layer-icon">💎</div>
+      <div class="layer-info">
+        <div class="layer-name">Capa base — Fertilizante sólido (opcional)</div>
+        <div class="layer-desc">Pastillas o sustrato enriquecido en el fondo para alimentación extra de raíces. Recomendado para plantados con muchas plantas exigentes.</div>
+        <div class="layer-depth">Grosor: 1-2 cm</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="experience-box">
+    <p>Una cosa que aprendí a las malas: la arena hay que lavarla muy bien antes de meterla. Y si usas madera, hiérvela primero durante al menos una hora — yo no lo hice una vez y el agua se tiñó de marrón oscuro en pocas horas. Con el tronco bien preparado no tienes ese problema.</p>
+  </div>
+
+  <div class="warning-box">
+    <p>⚠️ <strong>Importante:</strong> Los sustratos nutritivos para plantado como el ADA Amazonia sueltan amoníaco al principio. Esto puede prolongar o reiniciar el ciclado. Deja madurar el acuario al menos 3-4 semanas antes de meter peces.</p>
+  </div>
+
+  <h2>Montaje paso a paso</h2>
+
+  <div class="step-box">
+    <div class="step-number">Paso 01</div>
+    <h3>Planifica el diseño antes de empezar</h3>
+    <p>Antes de meter nada en el acuario, decide dónde van las plantas, las rocas y los troncos. El estilo más popular es el iwagumi (rocas y plantas bajas) o el estilo natural (troncos, plantas de diferentes alturas, zonas abiertas).</p>
+    <p>Las plantas más altas van al fondo, las medianas en el centro y las tapizantes o pequeñas al frente. Así creas profundidad visual.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 02</div>
+    <h3>Coloca el sustrato en capas</h3>
+    <p>Primero la capa base con fertilizante sólido si lo usas. Luego el sustrato nutritivo bien extendido (más grueso en el fondo, creando pendiente hacia el frente para efecto de profundidad). Por último la arena fina encima.</p>
+    <p>No mezcles las capas — cada una tiene su función y deben mantenerse separadas.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 03</div>
+    <h3>Coloca rocas y troncos</h3>
+    <p>Antes de llenar el acuario coloca la decoración sólida. Las rocas deben ser aptas para acuario — algunas rocas calcáreas elevan el pH. Los troncos necesitan estar hervidos y remojados para evitar que tiñan el agua.</p>
+    <p>Prueba diferentes disposiciones antes de decidirte. Una vez lleno el acuario es mucho más difícil reorganizar.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 04</div>
+    <h3>Llena el acuario con cuidado</h3>
+    <p>Coloca un plato o una bolsa de plástico sobre el sustrato y vierte el agua despacio encima para no removerlo. Llena hasta la mitad, planta las plantas, y termina de llenar.</p>
+    <p>Trata el agua con acondicionador antes de añadirla.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 05</div>
+    <h3>Planta con pinzas largas</h3>
+    <p>Las pinzas de acuario permiten plantar con precisión sin meter las manos y remover el sustrato. Introduce cada planta hasta que las raíces queden cubiertas pero sin enterrar el punto de crecimiento (la corona de la planta).</p>
+    <p>Las plantas tapizantes como la glossostigma o la utricularia graminifolia se colocan en pequeños grupos separados — con el tiempo se unirán solas.</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step-number">Paso 06</div>
+    <h3>Enciende el equipo y empieza el ciclado</h3>
+    <p>Con el acuario lleno y las plantas colocadas, enciende filtro, calentador e iluminación. Deja ciclar el acuario antes de añadir peces — el sustrato nutritivo nuevo puede disparar el amoníaco.</p>
+    <p>Las plantas ya establecidas ayudan a absorber el amoníaco y aceleran el proceso.</p>
+  </div>
+
+  <h2>¿Necesitas CO2?</h2>
+
+  <p>Esta es la pregunta que más gente se hace al empezar un plantado. La respuesta depende de las plantas que quieras tener y de lo exigente que quieras ser con el resultado.</p>
+
+  <div class="co2-box">
+    <h3>Sin CO2 vs con CO2</h3>
+    <div class="co2-grid">
+      <div class="co2-card noco2">
+        <div class="co2-card-title">🌿 Sin CO2 añadido</div>
+        <ul class="co2-list">
+          <li>Plantas de crecimiento lento (anubias, java fern, musgo)</li>
+          <li>Más fácil de gestionar</li>
+          <li>Menor coste inicial</li>
+          <li>Menos riesgo de bajadas de pH</li>
+          <li>Crecimiento más lento pero estable</li>
+        </ul>
+      </div>
+      <div class="co2-card withco2">
+        <div class="co2-card-title">💨 Con CO2 añadido</div>
+        <ul class="co2-list">
+          <li>Plantas exigentes y tapizantes</li>
+          <li>Crecimiento mucho más rápido</li>
+          <li>Colores más intensos en las plantas</li>
+          <li>Requiere más control y ajuste</li>
+          <li>Mayor inversión inicial</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="experience-box">
+    <p>Yo decidí añadir CO2 porque mis plantas no producían lo suficiente por sí solas — el crecimiento era muy lento y algunas empezaban a perder color. Desde que lo instalé la diferencia es notable: las plantas crecen más rápido, tienen mejor color y el acuario se ve más vivo. No es imprescindible para todos los plantados, pero si quieres plantas exigentes o tapizantes, acabarás necesitándolo.</p>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Consejo:</strong> Si empiezas sin CO2, elige plantas que no lo necesiten. Si con el tiempo quieres más variedad o plantas más exigentes, puedes añadirlo más adelante. No hace falta decidirlo todo desde el principio.</p>
+  </div>
+
+  <h2>Plantas recomendadas para empezar</h2>
+
+  <div class="plant-grid">
+    <div class="plant-card">
+      <div class="plant-icon">🌿</div>
+      <div class="plant-name">Anubias</div>
+      <div class="plant-sci">Anubias barteri</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Muy fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-low">Poca luz</span>
+      </div>
+      <p>La planta más resistente. Crece lenta pero aguanta casi cualquier condición. Se ata a rocas o troncos, no se entierra.</p>
+    </div>
+    <div class="plant-card">
+      <div class="plant-icon">🍀</div>
+      <div class="plant-name">Java fern</div>
+      <div class="plant-sci">Microsorum pteropus</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Muy fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-low">Poca luz</span>
+      </div>
+      <p>Hojas largas y onduladas muy decorativas. Como la anubias, se ata a superficies duras. Muy popular y fácil de encontrar.</p>
+    </div>
+    <div class="plant-card">
+      <div class="plant-icon">🌱</div>
+      <div class="plant-name">Vallisneria</div>
+      <div class="plant-sci">Vallisneria spiralis</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-med">Luz media</span>
+      </div>
+      <p>Hojas largas que flotan con la corriente. Perfecta para el fondo del acuario. Crece rápido y se reproduce sola.</p>
+    </div>
+    <div class="plant-card">
+      <div class="plant-icon">🌾</div>
+      <div class="plant-name">Musgo de java</div>
+      <div class="plant-sci">Taxiphyllum barbieri</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Muy fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-low">Poca luz</span>
+      </div>
+      <p>Se adhiere a cualquier superficie. Ideal para troncos y rocas. Los peces pequeños y las crías lo usan como refugio.</p>
+    </div>
+    <div class="plant-card">
+      <div class="plant-icon">🌺</div>
+      <div class="plant-name">Cryptocoryne</div>
+      <div class="plant-sci">Cryptocoryne spp.</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-low">Poca luz</span>
+      </div>
+      <p>Plantas de fondo con hojas anchas. Muchas variedades y colores. Se enraízan bien y aguantan cambios de parámetros.</p>
+    </div>
+    <div class="plant-card">
+      <div class="plant-icon">🌿</div>
+      <div class="plant-name">Hygrophila</div>
+      <div class="plant-sci">Hygrophila polysperma</div>
+      <div class="plant-tags">
+        <span class="ptag ptag-easy">Muy fácil</span>
+        <span class="ptag ptag-noco2">Sin CO2</span>
+        <span class="ptag ptag-med">Luz media</span>
+      </div>
+      <p>De las plantas de crecimiento más rápido. Ideal para absorber nitratos y competir con las algas. Perfecta para el fondo.</p>
+    </div>
+  </div>
+
+  <h2>Mantenimiento del acuario plantado</h2>
+
+  <div class="maint-grid">
+    <div class="maint-card">
+      <div class="maint-icon">✂️</div>
+      <div class="maint-title">Poda regular</div>
+      <div class="maint-desc">Las plantas de crecimiento rápido necesitan poda semanal o quincenal. Los esquejes se pueden replantar.</div>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon">💧</div>
+      <div class="maint-title">Cambios de agua</div>
+      <div class="maint-desc">20-30% semanal. Los plantados con CO2 pueden necesitar cambios más frecuentes por el mayor crecimiento.</div>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon">🧪</div>
+      <div class="maint-title">Fertilizante líquido</div>
+      <div class="maint-desc">Después de cada cambio de agua añade fertilizante líquido para reponer los nutrientes perdidos.</div>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon">💡</div>
+      <div class="maint-title">Control de luz</div>
+      <div class="maint-desc">8-10 horas al día con temporizador. Más horas favorecen las algas, menos frenan el crecimiento.</div>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon">🌿</div>
+      <div class="maint-title">Retirar hojas muertas</div>
+      <div class="maint-desc">Las hojas en descomposición contaminan el agua. Retíralas en cuanto las veas amarillear.</div>
+    </div>
+    <div class="maint-card">
+      <div class="maint-icon">💨</div>
+      <div class="maint-title">Ajuste de CO2</div>
+      <div class="maint-desc">Si usas CO2, apágalo por la noche. Las plantas no lo consumen sin luz y puede bajar el pH peligrosamente.</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <p>💡 <strong>Truco para evitar algas al inicio:</strong> Los primeros 2-3 meses de un plantado nuevo son los más difíciles — el sustrato suelta nutrientes y las plantas todavía no están establecidas. Pon muchas plantas desde el principio para competir con las algas, reduce las horas de luz a 6-7 horas y haz cambios de agua más frecuentes.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen del acuario plantado</h3>
+    <ul class="summary-list">
+      <li>Sustrato en capas: fertilizante base, sustrato nutritivo y arena fina encima</li>
+      <li>Herve y remoja la madera antes de meterla — evita que tiña el agua</li>
+      <li>Lava bien la arena antes de añadirla al acuario</li>
+      <li>Empieza con plantas fáciles sin CO2 (anubias, java fern, vallisneria)</li>
+      <li>El CO2 es necesario si quieres plantas exigentes o tapizantes</li>
+      <li>Apaga el CO2 por la noche para no bajar el pH</li>
+      <li>Poda regular, fertilizante líquido y cambios de agua semanales</li>
+      <li>Los primeros meses son los más difíciles — ten paciencia</li>
+    </ul>
+  </div>
+
+  <p>Un acuario plantado bien montado mejora con el tiempo — las plantas se establecen, se llenan los espacios y el conjunto gana en naturalidad. Es uno de los proyectos más bonitos de la acuariofilia, y una vez que lo tienes funcionando, engancha.</p>
+
+  <a class="cta-link" href="#">→ Las 10 plantas de acuario más fáciles para empezar sin CO2</a>
+
+</div>
+</body>
+</html>
