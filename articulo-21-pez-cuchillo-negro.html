@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pez cuchillo negro: cuidados, acuario necesario y compatibilidad</title>
+<meta name="description" content="Guía del pez cuchillo negro (Apteronotus albifrons): tamaño adulto, acuario mínimo, alimentación, compatibilidad y errores comunes.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.8;color:#1a1a2a;background:#f5f6f9}
+  .hero{background:linear-gradient(135deg,#0a0a14 0%,#1a2a3a 50%,#0a1a24 100%);color:white;padding:80px 24px 60px;text-align:center}
+  .hero-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#a8d8f8;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+  .hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,46px);font-weight:600;line-height:1.2;max-width:720px;margin:0 auto 20px}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,.75);max-width:540px;margin:0 auto}
+  .article-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+  .intro{font-family:'Lora',serif;font-size:19px;line-height:1.75;border-left:4px solid #2a4a6a;padding-left:24px;margin-bottom:40px}
+  p{margin-bottom:18px;color:#2a2a3a}
+  h2{font-family:'Lora',serif;font-size:24px;font-weight:600;color:#0a1a2a;margin:48px 0 16px;padding-bottom:10px;border-bottom:2px solid #c8d4e0}
+  .specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}
+  .spec-card{background:white;border:1px solid #c8d4e0;border-radius:12px;padding:16px;text-align:center}
+  .spec-icon{font-size:24px;margin-bottom:6px}
+  .spec-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#5a7a9a;margin-bottom:4px}
+  .spec-value{font-size:15px;font-weight:600;color:#0a1a2a}
+  .info-box{background:white;border:1px solid #c8d4e0;border-left:5px solid #2a4a6a;border-radius:0 12px 12px 0;padding:22px 24px;margin:22px 0}
+  .info-box h3{font-family:'Lora',serif;font-size:18px;color:#0a1a2a;margin-bottom:8px}
+  .info-box p{font-size:15px;margin-bottom:8px}
+  .warning-box{background:#fff5f5;border:1px solid #f0a8a8;border-radius:12px;padding:16px 20px;margin:22px 0}
+  .warning-box p{margin:0;font-size:15px;color:#6b1a1a}
+  .tip-box{background:#fff8e6;border:1px solid #f0d080;border-radius:12px;padding:16px 20px;margin:22px 0}
+  .tip-box p{margin:0;font-size:15px;color:#5a4500}
+  .compat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+  .compat-card{background:white;border-radius:12px;padding:18px}
+  .compat-card.yes{border:1px solid #a8e0c8}.compat-card.no{border:1px solid #f0a8a8}
+  .compat-title{font-weight:600;font-size:14px;margin-bottom:10px}
+  .compat-card.yes .compat-title{color:#0a4a2a}.compat-card.no .compat-title{color:#6b1a1a}
+  .compat-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .compat-list li{font-size:13px;color:#2a3a2a;display:flex;gap:8px}
+  .compat-card.yes li::before{content:'✓';color:#0a6a3a;font-weight:700}
+  .compat-card.no li::before{content:'✗';color:#8a1a1a;font-weight:700}
+  .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0}
+  .food-card{background:white;border:1px solid #c8d4e0;border-radius:10px;padding:16px}
+  .food-name{font-weight:600;font-size:14px;color:#0a1a2a;margin-bottom:4px}
+  .food-card p{font-size:13px;margin:0;color:#4a5a6a;line-height:1.5}
+  .summary-box{background:#0a1a2a;color:white;border-radius:16px;padding:36px;margin:48px 0 32px}
+  .summary-box h3{font-family:'Lora',serif;font-size:22px;color:#a8d8f8;margin-bottom:20px}
+  .summary-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .summary-list li{display:flex;gap:12px;font-size:15px;color:rgba(255,255,255,.85)}
+  .summary-list li::before{content:'✓';background:#2a4a6a;color:#a8d8f8;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
+  .cta-link{display:block;text-align:center;background:#2a4a6a;color:white;text-decoration:none;padding:16px 32px;border-radius:10px;font-weight:600;font-size:16px;margin-top:32px}
+  @media(max-width:600px){.hero{padding:60px 20px 48px}.article-wrap{padding:32px 18px 60px}.compat-grid{grid-template-columns:1fr}.summary-box{padding:24px 18px}}
+</style>
+</head>
+<body>
+<div style="background:#0a3a2a;padding:10px 24px;font-family:sans-serif;font-size:14px"><a href="index.html" style="color:#a8f0c6;text-decoration:none;font-weight:600">← Vida en Cristal · Inicio</a></div>
+<div class="hero">
+  <div class="hero-tag">Guía de especie</div>
+  <h1>Pez cuchillo negro: cuidados, acuario necesario y compatibilidad</h1>
+  <p class="hero-sub">Un pez nocturno, tímido y fascinante que se vende pequeño y acaba necesitando un acuario enorme. Lo que conviene saber antes de comprarlo.</p>
+</div>
+<div class="article-wrap">
+
+  <p class="intro">El pez cuchillo negro (<em>Apteronotus albifrons</em>) es uno de los peces más curiosos de la acuariofilia: negro como el carbón, sin escamas, con una franja blanca en el hocico y la cola, y capaz de nadar hacia delante y hacia atrás con la misma facilidad. En las tiendas suele venderse con 6-7 cm, y ahí empieza el problema: crece muchísimo.</p>
+
+  <p>En esta guía repasamos lo que necesita de verdad. Yo tengo cuchillos negros en mi acuario, y por eso insisto en lo más importante: es un pez precioso, pero no es para cualquier acuario.</p>
+
+  <h2>Ficha técnica</h2>
+  <div class="specs-grid">
+    <div class="spec-card"><div class="spec-icon">📏</div><div class="spec-label">Tamaño adulto</div><div class="spec-value">Hasta 30 cm en acuario</div></div>
+    <div class="spec-card"><div class="spec-icon">⏳</div><div class="spec-label">Esperanza de vida</div><div class="spec-value">7-15 años</div></div>
+    <div class="spec-card"><div class="spec-icon">🌡️</div><div class="spec-label">Temperatura</div><div class="spec-value">23-28 °C</div></div>
+    <div class="spec-card"><div class="spec-icon">💧</div><div class="spec-label">pH</div><div class="spec-value">6,0 - 8,0</div></div>
+    <div class="spec-card"><div class="spec-icon">🌙</div><div class="spec-label">Actividad</div><div class="spec-value">Nocturno</div></div>
+    <div class="spec-card"><div class="spec-icon">🍖</div><div class="spec-label">Alimentación</div><div class="spec-value">Carnívoro / omnívoro</div></div>
+    <div class="spec-card"><div class="spec-icon">🌎</div><div class="spec-label">Origen</div><div class="spec-value">Sudamérica</div></div>
+    <div class="spec-card"><div class="spec-icon">⭐</div><div class="spec-label">Dificultad</div><div class="spec-value">Intermedio</div></div>
+  </div>
+  <p style="font-size:14px;color:#5a6a7a">En la naturaleza puede llegar a 50 cm, pero en acuario lo habitual es que se quede en torno a 30 cm. Aun así, es un pez muy grande.</p>
+
+  <h2>Cómo es este pez</h2>
+  <p>Es un pez eléctrico débil de ríos sudamericanos. Genera un campo eléctrico muy suave que usa para orientarse y localizar comida en la oscuridad, y no representa ningún peligro para ti ni para otros peces. Pasa el día escondido y se activa al anochecer. Es normal que lo veas poco durante el día, sobre todo al principio.</p>
+
+  <h2>El acuario que necesita</h2>
+  <div class="warning-box"><p>⚠️ <strong>El error más habitual:</strong> comprarlo pequeño y ponerlo en un acuario de tamaño medio. Con los años se le queda diminuto. Antes de comprarlo, piensa en el tamaño adulto, no en el que tiene en la tienda.</p></div>
+  <div class="info-box">
+    <h3>Tamaño del acuario</h3>
+    <p>Las recomendaciones varían según la fuente, pero todas coinciden en que necesita un acuario grande: como mínimo varios centenares de litros, y alguna guía habla de unos 450 litros (120 galones) para un adulto. Cuanto más largo sea el acuario, mejor, porque necesita espacio para nadar y para esconderse.</p>
+  </div>
+  <div class="info-box">
+    <h3>Escondites, luz y corriente</h3>
+    <p><strong>Escondites:</strong> tubos de PVC o cerámica, troncos y rocas con huecos. Si no tiene dónde esconderse, vive estresado.</p>
+    <p><strong>Luz tenue:</strong> prefiere zonas en penumbra. Las plantas flotantes ayudan a sombrear.</p>
+    <p><strong>Corriente y oxígeno:</strong> en la naturaleza habita zonas con corriente, así que agradece un buen filtro y agua bien oxigenada.</p>
+    <p><strong>Sustrato:</strong> arena fina o grava lisa, para no dañar su piel sin escamas.</p>
+    <p><strong>Tapa:</strong> imprescindible. Puede saltar si se asusta.</p>
+  </div>
+  <div class="tip-box"><p>💡 <strong>Consejo:</strong> al no tener escamas, es más sensible a algunos medicamentos y a la sal. Lee siempre la etiqueta y, si tienes dudas sobre un tratamiento, consulta con una tienda especializada antes de usarlo.</p></div>
+
+  <h2>Compatibilidad</h2>
+  <p>Es un depredador. Por mucho que parezca tranquilo, cualquier pez que le quepa en la boca es comida potencial, sobre todo por la noche, cuando está activo.</p>
+  <div class="compat-grid">
+    <div class="compat-card yes"><div class="compat-title">✓ Mejor con</div><ul class="compat-list">
+      <li>Peces grandes y pacíficos</li>
+      <li>Especies de tamaño similar o mayor</li>
+      <li>Peces que ocupen otras zonas del acuario</li></ul></div>
+    <div class="compat-card no"><div class="compat-title">✗ Evitar</div><ul class="compat-list">
+      <li>Neones, rasboras y peces pequeños</li>
+      <li>Gambas y crías de cualquier pez</li>
+      <li>Peces muy agresivos que lo acosen</li>
+      <li>Bettas y acuarios pequeños</li></ul></div>
+  </div>
+  <p>Si quieres tener más de un cuchillo, necesitas un acuario muy grande y muchos escondites: pueden pelearse entre ellos por el territorio.</p>
+
+  <h2>Alimentación</h2>
+  <p>Come sobre todo por la noche, así que lo mejor es darle de comer al apagar las luces o al atardecer.</p>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-name">Gusanos de sangre</div><p>Congelados o liofilizados. Los acepta muy bien.</p></div>
+    <div class="food-card"><div class="food-name">Artemia y mysis</div><p>Buena fuente de proteína, sobre todo mientras es joven.</p></div>
+    <div class="food-card"><div class="food-name">Trocitos de pescado o gamba</div><p>Para adultos, de vez en cuando y sin pasarse.</p></div>
+    <div class="food-card"><div class="food-name">Pellets hundibles</div><p>Para carnívoros. Cuando se acostumbra, una buena base.</p></div>
+  </div>
+
+  <h2>Errores comunes</h2>
+  <div class="info-box">
+    <p>1. Comprarlo pequeño sin pensar en el tamaño adulto.</p>
+    <p>2. Ponerlo con peces pequeños y que desaparezcan de noche.</p>
+    <p>3. No darle escondites suficientes.</p>
+    <p>4. Alimentarlo solo de día, cuando está escondido, y que otros peces se lo coman todo.</p>
+    <p>5. Usar medicamentos o sal sin comprobar si los tolera.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3>Resumen</h3>
+    <ul class="summary-list">
+      <li>Crece hasta unos 30 cm en acuario y puede vivir 7-15 años</li>
+      <li>Necesita un acuario grande, de varios cientos de litros</li>
+      <li>Es nocturno: escondites, luz tenue y comida al anochecer</li>
+      <li>Es depredador: nada de peces pequeños como compañeros</li>
+      <li>Sin escamas: cuidado con medicamentos y sal</li>
+      <li>Es un pez precioso, pero un compromiso a largo plazo</li>
+    </ul>
+  </div>
+
+  <a class="cta-link" href="index.html">→ Ver todos los artículos de Vida en Cristal</a>
+</div>
+</body>
+</html>
